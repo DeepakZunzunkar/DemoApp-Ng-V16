@@ -1,0 +1,37 @@
+.txt-sec{
+    width: 45%;
+    background: #fff;
+    margin: 10px 5px;
+    padding: 10px;
+    float: right;
+}
+
+.heading-green{
+    color: #107203bd;
+    font-size: 18px;
+}
+
+.txt-sec p{
+    color: #858585;
+    font-size: 16px;
+    padding: 10px 0;
+    line-height: 20px;
+
+}
+
+.btn-green{
+    color: #fff;
+    background-color: #107203bd;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    float: right;
+}
+
+.btn-green:hover{
+    background: #000;
+}
+
+.clear{
+    clear: both;
+}
