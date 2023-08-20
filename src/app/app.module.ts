@@ -10,6 +10,7 @@ import { TxtSec1Component } from './my-container/txt-sec1/txt-sec1.component';
 import { TxtSec2Component } from './my-container/txt-sec2/txt-sec2.component';
 import { DatabindComponent } from './databind/databind.component';
 import { ClassStyleBindingComponent } from './databind/class-style-binding/class-style-binding.component';
+import { EventBindingComponent } from './databind/event-binding/event-binding.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ClassStyleBindingComponent } from './databind/class-style-binding/class
     TxtSec1Component,
     TxtSec2Component,
     DatabindComponent,
-    ClassStyleBindingComponent
+    ClassStyleBindingComponent,
+    EventBindingComponent
     
   ],
   imports: [

@@ -1,0 +1,44 @@
+<!-- 
+
+(focus)="myMethod()"  // an element has recieved focus
+(blur)="myMethod()"    //element has lost focus
+(submit)="myMethod()"   //submit has been pressed
+(scroll)="myMethod()"
+
+(cut)="myMethod()"
+(copy)="myMethod()"
+(paste)="myMethod()"
+
+(keydown)="myMethod()"
+(keypress)="myMethod()"
+(keyup)="myMethod()"
+
+(mouseenter)="myMethod()"
+(mousedown)="myMethod()"
+(mouseup)="myMethod()"
+
+(click)="myMethod()"
+(dblclick)="myMethod()"
+
+(drag)="myMethod()"
+(dragover)="myMethod()"
+(drop)="myMethod()"
+
+ -->
+
+<!-- step 1 -->
+<!-- <button (click)="addToCart()">Add to Cart</button>
+<p>{{ msg }}</p> -->
+
+<!-- step 2 -->
+
+<input name="name" id="name" value="dzon" (click)="onInputClick($event)">
+<br>
+
+<!-- step 3 -->
+<div class="eDive">
+    <button value="Laptop" (click)="addToCart1($event)">Laptop</button>
+    <button value="Smart TV" (click)="addToCart1($event)">Smart TV</button>
+    <button value="Iphone" (click)="addToCart1($event)">Iphone</button>
+</div>
+<p>{{ msg }}</p>
