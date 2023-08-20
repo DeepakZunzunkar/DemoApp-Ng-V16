@@ -11,6 +11,8 @@ import { TxtSec2Component } from './my-container/txt-sec2/txt-sec2.component';
 import { DatabindComponent } from './databind/databind.component';
 import { ClassStyleBindingComponent } from './databind/class-style-binding/class-style-binding.component';
 import { EventBindingComponent } from './databind/event-binding/event-binding.component';
+import { TwoDataBindingComponent } from './databind/two-data-binding/two-data-binding.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,12 +25,14 @@ import { EventBindingComponent } from './databind/event-binding/event-binding.co
     TxtSec2Component,
     DatabindComponent,
     ClassStyleBindingComponent,
-    EventBindingComponent
+    EventBindingComponent,
+    TwoDataBindingComponent
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
