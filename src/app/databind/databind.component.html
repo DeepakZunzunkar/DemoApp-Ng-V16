@@ -66,10 +66,19 @@
     <h3>Class & Style Binding</h3>
     <hr>
     <app-class-style-binding></app-class-style-binding>
-</div>   
+</div>
 <div class="commanb">
 
     <h3>Event Binding</h3>
     <hr>
     <app-event-binding></app-event-binding>
-</div>  
+</div>
+<div class="clear"></div>
+<div class="commanb">
+
+    <h3>Template Reference Varibles / Local Variable</h3>
+    <hr>
+    <p>get other elemnt info on click on current elemnt</p>
+    <input #inptinfo type="text" name="tname" id="tname" value="dzone test">
+    <button [style.margin]="'8px'" (click)="getInfo(inptinfo)"  type="button">get Info</button>
+</div>
