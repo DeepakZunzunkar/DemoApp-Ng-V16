@@ -1,3 +1,27 @@
 <!-- <router-outlet></router-outlet> -->
 <!-- <app-my-container></app-my-container> -->
-<app-databind></app-databind>
+<!-- <app-databind></app-databind> -->
+<div class="container-fluid mt-3">
+    <div class="card">
+        <div class="card-body">
+            <tabset>
+                <tab heading="Home" id="tab1">
+                    <!-- <h2> </h2> -->
+                     <div class="dash1 mt-5" >
+                        <div class="alert alert-info">Welcome to DZ App 
+                            <span [style.float]="'right'"> {{ currentDateTime | date }}</span>
+                        </div>
+                        
+                     </div>   
+                </tab>
+                <tab heading="Component Basics" class="mt-3">
+                    <app-my-container></app-my-container>
+                </tab>
+                <tab heading="Data Binding Basic" class="mt-3">
+                    <app-databind></app-databind>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+
+</div>

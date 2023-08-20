@@ -13,6 +13,9 @@ import { ClassStyleBindingComponent } from './databind/class-style-binding/class
 import { EventBindingComponent } from './databind/event-binding/event-binding.component';
 import { TwoDataBindingComponent } from './databind/two-data-binding/two-data-binding.component';
 import { FormsModule } from '@angular/forms';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 
 @NgModule({
@@ -32,7 +35,10 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    TabsModule.forRoot(),
+    CarouselModule.forRoot(),
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
