@@ -1,0 +1,22 @@
+.box{
+    
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    float: left;
+    margin: 3px;
+    text-align: center;
+    
+}
+
+.myclass{
+    border: 1px solid #858858;
+}
+
+.myclass1{
+    background: #421212;
+} 
+
+.myclass2{
+    color: #fff;
+}

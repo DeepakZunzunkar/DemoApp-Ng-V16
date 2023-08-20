@@ -8,6 +8,9 @@ import { TopNavComponent } from './my-container/top-nav/top-nav.component';
 import { BannerComponent } from './my-container/banner/banner.component';
 import { TxtSec1Component } from './my-container/txt-sec1/txt-sec1.component';
 import { TxtSec2Component } from './my-container/txt-sec2/txt-sec2.component';
+import { DatabindComponent } from './databind/databind.component';
+import { ClassStyleBindingComponent } from './databind/class-style-binding/class-style-binding.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { TxtSec2Component } from './my-container/txt-sec2/txt-sec2.component';
     TopNavComponent,
     BannerComponent,
     TxtSec1Component,
-    TxtSec2Component
+    TxtSec2Component,
+    DatabindComponent,
+    ClassStyleBindingComponent
+    
   ],
   imports: [
     BrowserModule,

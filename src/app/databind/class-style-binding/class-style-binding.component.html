@@ -1,0 +1,21 @@
+<!-- class binding is of the type of property binding -->
+
+<!-- static way -->
+<!-- <div class="box" [class.myclass]="false"></div> -->
+<!-- dynamic way -->
+<div class="box" [class.myclass]="mypro1">class binding</div>
+<div class="box" [style.border]="mystyle1">style binding</div>
+
+<!-- ternary conditional operation  -->
+<div class="box" [style.border]="isActive? mystyle1 : '1px solid green'">ternary oppe</div>
+
+
+<!-- binding multiple class and multiple styles using angular inbuilt directive like ngClass and ngStyle -->
+
+<!-- <div class="box" [ngClass]="'myclass myclass1 myclass2'">multiple class using inbuild directive ngClass</div> -->
+<div class="box" [ngClass]="mlticlasses">multiple class using inbuild directive ngClass</div>
+
+<!-- multi style -->
+<!-- <div class="box" [ngStyle]="{'background':'red','border':'2px solid green'}">multiple style using inbuild directive ngClass</div> -->
+
+<div class="box" [ngStyle]="mltiStyle">multiple style using inbuild directive ngClass</div>

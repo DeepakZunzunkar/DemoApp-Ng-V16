@@ -1,0 +1,69 @@
+<div class="commanb">
+
+    <h3>Interpolation</h3>
+    <hr>
+    <p>My Name is {{ dynamicName }}</p>
+
+    <!-- expression evaluate -->
+    {{ 5*5 }}
+    <br>
+    <!-- string concatination -->
+    {{ "welcome "+dynamicName }}
+    <br>
+    <!-- use of  javscript inbuilt method and property -->
+    {{ dynamicName.length }}
+    <br>
+    {{ dynamicName.toUpperCase() }}
+    <!-- call to custume method -->
+    <br>
+    {{ myMethod() }}
+
+    <!-- ternary conditional operation -->
+    <!-- <p>my app status is {{ appStatus? "Online" : 'offline' }}</p> -->
+    <p>my app status is {{ appStatus? status1 : status2 }}</p>
+
+    <input type="text" name="" id="" value="{{dynamicName}}">
+
+</div>
+
+<div class="commanb">
+
+    <h3>Property Binding</h3>
+    <hr>
+    <input type="text" name="" id="" [value]="dynamicName">
+    <br><br>
+    <input type="text" name="" id="" bind-value="dynamicName">
+    <br><br>
+    <!-- result are same in both property binding and interpolation -->
+    <!-- difference is we can use only string in interpolation and also we can do string concationation
+     but in property binding we can not do string concatination 
+     but we can use string as well as non-string in property binding -->
+
+    <!-- comman case where we can not use interpolation only we have to use property-binding to make it work-->
+
+    <!-- <input type="text" disabled name="" id="" [value]="dynamicName"> --> <!-- bydefault true -->
+
+    <!-- <input type="text" disabled="{{appStatus}}" name="" id="" [value]="dynamicName"> --> <!-- will not work -->
+
+    <input type="text" [disabled]="appStatus" name="" id="" [value]="dynamicName"> <!-- it will work -->
+
+    <br><br>
+    <input type="text" [hidden]="false" [value]="dynamicName">
+
+    <!-- conclusion : html some attrubute work only with property binding not with interpolation 
+        like disabled and hidden -->
+
+
+    <!-- ternary conditional operation -->
+    <p>app status
+        <input type="text" [disabled]="true" [value]="appStatus? status1:status2">
+    </p>
+</div>
+<!-- <div class="clear"></div> -->
+
+<div class="commanb">
+
+    <h3>Class & Style Binding</h3>
+    <hr>
+    <app-class-style-binding></app-class-style-binding>
+</div>    
