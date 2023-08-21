@@ -1,26 +1,74 @@
 <div class="container-fluid">
-    <button class="btn btn-primary" (click)="onBlockCreate()">create block</button>
 
-    <!-- 
-    <div *ngIf="blockStatus; else elseBlk" class="p-3 mb-2 mt-5 bg-success text-white rounded">
-        block has been created..
+
+    <div class="row">
+        <div class="col bg-secondary rounded" [style.margin-right]="'12px'">
+
+            <div class="text-light bg-warning rounded-bottom text-center" [style.font-size]="'20px'"
+                [style.font-weight]="'bolder'">ngIf</div>
+
+
+            <div class="text-light">
+                <span [style.color]="'#bbb80e'">Note: </span> used only when we have two condition to check.
+            </div>
+            <button class="btn btn-primary mt-3 float-left" (click)="onBlockCreate()">create block</button>
+            <button class="btn btn-primary mt-3 float-right" [style.margin-left]="'100px'"
+                (click)="toggleOnBlockCreate()">toggle</button>
+
+            <!-- 
+            <div *ngIf="blockStatus; else elseBlk" class="p-3 mb-2 mt-5 bg-success text-white rounded">
+                block has been created..
+            </div>
+            <ng-template #elseBlk >
+                <div class="p-3 mb-2 mt-5 bg-danger text-white rounded">
+                   No block has been created yet..
+                </div>
+            </ng-template> -->
+
+            <div *ngIf="blockStatus; then thenblk else elseBlk"></div>
+            <ng-template #thenblk>
+                <div class="p-3 mb-2 mt-5 bg-success text-white rounded">
+                    block has been created..
+                </div>
+            </ng-template>
+            <ng-template #elseBlk>
+                <div class="p-3 mb-2 mt-5 bg-danger text-white rounded">
+                    No block has been created yet..
+                </div>
+            </ng-template>
+        </div>
+        <div class="col-6 bg-secondary rounded" [style.margin-right]="'12px'">
+            <div class="text-light bg-info rounded-bottom text-center" [style.font-size]="'20px'"
+                [style.font-weight]="'bolder'">ngFor</div>
+        </div>
+        <div class="col bg-secondary rounded">
+            <div class="text-light bg-success rounded-bottom text-center" [style.font-size]="'20px'"
+                [style.font-weight]="'bolder'">ngSwitch</div>
+            <div class="text-light">
+                <span [style.color]="'#bbb80e'">Note: </span> used only when we have multiple condition to check.
+            </div>
+            <div class="mt-2">
+                <alert type="success" [ngSwitch]="selectedProduct">
+                    <strong *ngSwitchDefault>Please select product</strong> 
+                    <strong *ngSwitchCase="'Laptop'">Laptop</strong> 
+                    <strong *ngSwitchCase="'Mobile'">Mobile</strong> 
+                    <strong *ngSwitchCase="'TV'">TV</strong> 
+                    <strong *ngSwitchCase="'Washing Machine'">Washing Machine</strong> 
+                </alert>
+               
+            </div>
+            <div class="float-right">
+                <select class="form-control mt-3" (change)="getProduct($event)" name="" id="">
+                    <option value="default">Select Product</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Mobile">Mobile</option>
+                    <option value="TV">TV</option>
+                    <option value="Washing Machine">Washing Machine</option>
+                </select>
+            </div>
+
+
+        </div>
     </div>
-    <ng-template #elseBlk >
-        <div class="p-3 mb-2 mt-5 bg-danger text-white rounded">
-           No block has been created yet..
-        </div>
-    </ng-template> -->
 
-    <div *ngIf="blockStatus; then thenblk else elseBlk"></div>
-    <ng-template #thenblk>
-        <div class="p-3 mb-2 mt-5 bg-success text-white rounded">
-            block has been created..
-        </div>
-    </ng-template>
-    <ng-template #elseBlk>
-        <div class="p-3 mb-2 mt-5 bg-danger text-white rounded">
-            No block has been created yet..
-        </div>
-    </ng-template>
-    
 </div>
