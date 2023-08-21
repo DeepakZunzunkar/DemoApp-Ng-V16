@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <button class="btn btn-primary" (click)="onBlockCreate()">create block</button>
+
+    <!-- 
+    <div *ngIf="blockStatus; else elseBlk" class="p-3 mb-2 mt-5 bg-success text-white rounded">
+        block has been created..
+    </div>
+    <ng-template #elseBlk >
+        <div class="p-3 mb-2 mt-5 bg-danger text-white rounded">
+           No block has been created yet..
+        </div>
+    </ng-template> -->
+
+    <div *ngIf="blockStatus; then thenblk else elseBlk"></div>
+    <ng-template #thenblk>
+        <div class="p-3 mb-2 mt-5 bg-success text-white rounded">
+            block has been created..
+        </div>
+    </ng-template>
+    <ng-template #elseBlk>
+        <div class="p-3 mb-2 mt-5 bg-danger text-white rounded">
+            No block has been created yet..
+        </div>
+    </ng-template>
+    
+</div>

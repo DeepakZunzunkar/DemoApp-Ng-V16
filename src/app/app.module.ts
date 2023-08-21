@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AlertModule } from 'ngx-bootstrap/alert';
     DatabindComponent,
     ClassStyleBindingComponent,
     EventBindingComponent,
-    TwoDataBindingComponent
+    TwoDataBindingComponent,
+    DirectivesDemoComponent
     
   ],
   imports: [
