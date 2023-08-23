@@ -4,15 +4,16 @@
 <div class="container-fluid mt-3">
     <div class="card">
         <div class="card-body">
-            <tabset>
+            
+            <tabset #staticTabs>
                 <tab heading="Home" id="tab1">
                     <!-- <h2> </h2> -->
-                     <div class="dash1 mt-5" >
-                        <div class="alert alert-info">Welcome to DZ App 
+                    <div class="dash1 mt-5">
+                        <div class="alert alert-info">Welcome to DZ App
                             <span [style.float]="'right'"> {{ currentDateTime | date }}</span>
                         </div>
-                        
-                     </div>   
+
+                    </div>
                 </tab>
                 <tab heading="Component Basics" class="mt-3">
                     <app-my-container></app-my-container>

@@ -44,7 +44,7 @@
                 <span [style.color]="'#bbb80e'">Note: </span>
                 it is used to display data of a collections.
             </div>
-            <table class="table">
+            <table class="table table-hover">
                 <thead class="thead-dark" [style.background]="'black'">
                     <tr>
                         <th scope="col">Sr.No</th>
@@ -97,5 +97,27 @@
 
         </div>
     </div>
+    <div class="row mt-5">
+        <div class="col-md-3">
+            <input type="text" #uname placeholder="enter name" class="form-control">
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-success" (click)="addUser(uname)">
+                create user
+            </button>
 
+            <button class="btn btn-danger m-2" (click)="removeTopUser()">
+                Remove Top
+            </button>
+        </div>
+        
+    </div>
+    <div class="row mt-2">
+        <ul class="list-group col-md-3">
+            <li *ngFor="let user of users;index as i" class="list-group-item list-group-item-action">
+                  {{ user.name + i }}  
+                  <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeUser(i)" [style.float]="'right'">remove</button>
+            </li>
+        </ul>
+    </div>
 </div>

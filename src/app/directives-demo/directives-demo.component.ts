@@ -15,6 +15,9 @@ export class DirectivesDemoComponent implements OnInit {
     {proImg:'',name:'Tv',id:'pro03',price:44000.00 },
     {proImg:'',name:'Washing Machine',id:'pro04',price:25000.00 },
   ];
+
+  users:any[]=[];
+
   constructor(){
 
   }
@@ -34,5 +37,20 @@ export class DirectivesDemoComponent implements OnInit {
   getProduct(event:any){
     console.log(event.target.value);
     this.selectedProduct=event.target.value;
+  }
+
+  addUser(uname:any){
+    this.users.push({
+      name:uname.value
+    });
+
+  }
+
+  removeTopUser(){
+    this.users.splice(this.users.length-1);
+  }
+
+  removeUser(i:any){
+    this.users.splice(i,1);
   }
 }
