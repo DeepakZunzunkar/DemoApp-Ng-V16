@@ -20,7 +20,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
   
   ngAfterViewInit(): void {
-    this.selectTab(3);
+    this.selectTab(4);
   }
 
   selectTab(tabId: number) {

@@ -17,6 +17,11 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
+import { RoutingBasicsComponent } from './routing-basics/routing-basics.component';
+import { HomeComponent } from './routing-basics/home/home.component';
+import { AboutComponent } from './routing-basics/about/about.component';
+import { ContactComponent } from './routing-basics/contact/contact.component';
+import { ProductComponent } from './routing-basics/product/product.component';
 
 
 @NgModule({
@@ -31,7 +36,12 @@ import { DirectivesDemoComponent } from './directives-demo/directives-demo.compo
     ClassStyleBindingComponent,
     EventBindingComponent,
     TwoDataBindingComponent,
-    DirectivesDemoComponent
+    DirectivesDemoComponent,
+    RoutingBasicsComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    ProductComponent
     
   ],
   imports: [
