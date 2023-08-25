@@ -22,6 +22,7 @@ import { HomeComponent } from './routing-basics/home/home.component';
 import { AboutComponent } from './routing-basics/about/about.component';
 import { ContactComponent } from './routing-basics/contact/contact.component';
 import { ProductComponent } from './routing-basics/product/product.component';
+import { AppLoginComponent } from './routing-basics/app-login/app-login.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ProductComponent } from './routing-basics/product/product.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    ProductComponent
+    ProductComponent,
+    AppLoginComponent
     
   ],
   imports: [
