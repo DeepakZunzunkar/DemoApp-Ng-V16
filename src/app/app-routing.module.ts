@@ -5,6 +5,7 @@ import { AboutComponent } from './routing-basics/about/about.component';
 import { ProductComponent } from './routing-basics/product/product.component';
 import { ContactComponent } from './routing-basics/contact/contact.component';
 import { AppLoginComponent } from './routing-basics/app-login/app-login.component';
+import { PageNotFoundComponent } from './routing-basics/page-not-found/page-not-found.component';
 
 const routes: Routes = [
 
@@ -13,7 +14,9 @@ const routes: Routes = [
   { path:"login", component: AppLoginComponent },
   { path:"about", component: AboutComponent },
   { path:"contact", component: ContactComponent },
-  { path:"product", component: ProductComponent }
+  { path:"product", component: ProductComponent },
+  { path:"pageNotFound", component: PageNotFoundComponent },
+  { path:"**", component: PageNotFoundComponent } 
 
 
 ];

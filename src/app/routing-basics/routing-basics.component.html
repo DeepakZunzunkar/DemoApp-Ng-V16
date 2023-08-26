@@ -5,7 +5,7 @@
     <ul class="nav nav-underline">
         <li class="nav-item">
           <a class="nav-link" aria-current="page" 
-          [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active myactive" routerLink="/">Home</a>
+          [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active myactive" routerLink="/home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active myactive" routerLink="about">About</a>
@@ -15,6 +15,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active myactive" routerLink="contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active myactive" routerLink="pageNotFound">page Not Found</a>
         </li>
       </ul>
       <div class="container  text-center">
