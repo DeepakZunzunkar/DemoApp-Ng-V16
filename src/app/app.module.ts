@@ -30,6 +30,8 @@ import { IphoneComponent } from './routing-basics/product/iphone/iphone.componen
 import { SunglassComponent } from './routing-basics/product/sunglass/sunglass.component';
 import { NgcontenttComponent } from './ngcontentt/ngcontentt.component';
 import { CommonComponent } from './ngcontentt/common/common.component';
+import { ParentComponent } from './parent/parent.component';
+import { Child1Component } from './parent/child1/child1.component';
 
 
 
@@ -58,7 +60,9 @@ import { CommonComponent } from './ngcontentt/common/common.component';
     IphoneComponent,
     SunglassComponent,
     NgcontenttComponent,
-    CommonComponent
+    CommonComponent,
+    ParentComponent,
+    Child1Component
     
     
   ],

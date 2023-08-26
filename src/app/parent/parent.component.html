@@ -1,0 +1,52 @@
+<div class="container app-parent rounded">
+    <h2 class="text-center">Buy Product </h2>
+    <hr class="mb-3">
+    <div class="alert alert-warning d-flex align-items-center" *ngIf="isadded">
+        <strong class="text-success">{{ isadded }}</strong> &nbsp; is selectd and added to cart
+        <button class="btn btn-success ms-auto">Checkout</button>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <img height="200" src="assets/images/product/headphone.jpg" class="card-img-top" alt="product">
+                <div class="card-body">
+                    <h5 class="card-title">Head Phone</h5>
+                    <button (click)="onSelectProduct('Head Phone')" class="btn btn-primary btn-sm">select</button>
+                </div>
+            </div>
+            <div class="card">
+                <img height="200" src="assets/images/product/iphone.jpg" class="card-img-top" alt="product">
+                <div class="card-body">
+                    <h5 class="card-title">Iphone</h5>
+                    <button (click)="onSelectProduct('Iphone')" class="btn btn-primary btn-sm">select</button>
+                </div>
+            </div>
+            <div class="card">
+                <img height="200" src="assets/images/product/sunGlass.jpg" class="card-img-top" alt="product">
+                <div class="card-body">
+                    <h5 class="card-title">Sun Glass</h5>
+
+                    <button (click)="onSelectProduct('Sun Glass')" class="btn btn-primary btn-sm">select</button>
+                </div>
+            </div>
+            <div class="card">
+                <img height="200" src="assets/images/product/smartWatch.jpg" class="card-img-top" alt="product">
+                <div class="card-body">
+                    <h5 class="card-title">Smart Watch</h5>
+                    <button (click)="onSelectProduct('Smart Watch')" class="btn btn-primary btn-sm">select</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="app-chld1 rounded text-center py-2">
+                <h4 *ngIf="!productSelected">please select product</h4>
+                <h3 *ngIf="productSelected" class="text-white">{{ product }}</h3>
+                <button class="btn btn-success m-2" (click)="addToCart()">add to cart</button>
+            </div>
+        </div>
+        <div class="clear">
+
+        </div>
+    </div>
+
+</div>
