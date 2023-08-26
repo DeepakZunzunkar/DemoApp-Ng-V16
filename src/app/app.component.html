@@ -5,15 +5,23 @@
     <!-- <app-app-login></app-app-login> -->
     <div class="card">
         <div class="card-body">
-            
+
             <tabset #staticTabs>
                 <tab heading="Home" id="tab1">
-                    
-                    <div class="dash1 mt-5">
-                        <div class="alert alert-info">Welcome to DZ App
-                            <span [style.float]="'right'"> {{ currentDateTime | date }}</span>
-                        </div>
 
+                    <div class="container mt-5">
+                        <div class="form-check form-switch">
+                            
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" [(ngModel)]="appstatus">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">{{ appstatus ? 'online' : 'offline' }}</label>
+                        </div>
+                        <ng-container *ngIf="appstatus">
+                            <div class="mt-5 rounded border-start border-info border-5">
+                                <div class="alert alert-info">Welcome to DZ App
+                                    <span [style.float]="'right'"> {{ currentDateTime | date }}</span>
+                                </div>
+                            </div>
+                        </ng-container>
                     </div>
                 </tab>
                 <tab heading="Component Basics" class="mt-3">

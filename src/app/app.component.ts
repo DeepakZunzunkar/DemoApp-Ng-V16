@@ -11,6 +11,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   title = 'Wlecome to Demo App - Angular v16';
   currentDateTime: Date = new Date();
+  
+  appstatus:boolean=false;
 
   @ViewChild('staticTabs', { static: false })
   staticTabs?: TabsetComponent;
@@ -20,7 +22,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
   
   ngAfterViewInit(): void {
-    this.selectTab(5);
+    this.selectTab(0);
   }
 
   selectTab(tabId: number) {
