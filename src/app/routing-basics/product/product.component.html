@@ -1,6 +1,53 @@
-<div class="pm-rt mt-2 rounded">
-    <h2 class="p-5">Product</h2>
-    <p class="m-5 p-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-        galley of type and scrambled it to make a type specimen book.</p>
+<div class="prd-area mt-2 rounded">
+    <h2 class="text-center">Product</h2>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+    <hr class="mb-3">
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <img  height="200" src="assets/images/product/headphone.jpg" class="card-img-top"
+                    alt="product">
+                <div class="card-body">
+                    <h5 class="card-title">Head Phone</h5>
+                    <p class="card-text">Some quick example text to build on the card title</p>
+                    <a routerLink="headphone" class="btn btn-primary btn-sm">view details</a>
+                </div>
+            </div>
+            <div class="card">
+                <img height="200" src="assets/images/product/iphone.jpg" class="card-img-top"
+                    alt="product">
+                <div class="card-body">
+                    <h5 class="card-title">Iphone</h5>
+                    <p class="card-text">Some quick example text to build on the card title</p>
+                    <a routerLink="iphone" class="btn btn-primary btn-sm">view details</a>
+                </div>
+            </div>
+            <div class="card">
+                <img  height="200" src="assets/images/product/sunGlass.jpg" class="card-img-top"
+                    alt="product">
+                <div class="card-body">
+                    <h5 class="card-title">Sun Glass</h5>
+                    <p class="card-text">Some quick example text to build on the card title</p>
+                    <a routerLink="sunglass" class="btn btn-primary btn-sm">view details</a>
+                </div>
+            </div>
+            <div class="card">
+                <img height="200" src="assets/images/product/smartWatch.jpg" class="card-img-top"
+                alt="product">
+                <div class="card-body">
+                    <h5 class="card-title">Sun Glass</h5>
+                    <p class="card-text">Some quick example text to build on the card title</p>
+                    <a routerLink="smartwatch" class="btn btn-primary btn-sm">view details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 border-start border-warning">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+
+
 </div>

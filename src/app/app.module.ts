@@ -24,6 +24,11 @@ import { ContactComponent } from './routing-basics/contact/contact.component';
 import { ProductComponent } from './routing-basics/product/product.component';
 import { AppLoginComponent } from './routing-basics/app-login/app-login.component';
 import { PageNotFoundComponent } from './routing-basics/page-not-found/page-not-found.component';
+import { HeadphoneComponent } from './routing-basics/product/headphone/headphone.component';
+import { SmartwatchComponent } from './routing-basics/product/smartwatch/smartwatch.component';
+import { IphoneComponent } from './routing-basics/product/iphone/iphone.component';
+import { SunglassComponent } from './routing-basics/product/sunglass/sunglass.component';
+
 
 
 @NgModule({
@@ -45,7 +50,12 @@ import { PageNotFoundComponent } from './routing-basics/page-not-found/page-not-
     ContactComponent,
     ProductComponent,
     AppLoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HeadphoneComponent,
+    SmartwatchComponent,
+    IphoneComponent,
+    SunglassComponent
+    
     
   ],
   imports: [
