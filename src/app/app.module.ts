@@ -28,6 +28,8 @@ import { HeadphoneComponent } from './routing-basics/product/headphone/headphone
 import { SmartwatchComponent } from './routing-basics/product/smartwatch/smartwatch.component';
 import { IphoneComponent } from './routing-basics/product/iphone/iphone.component';
 import { SunglassComponent } from './routing-basics/product/sunglass/sunglass.component';
+import { NgcontenttComponent } from './ngcontentt/ngcontentt.component';
+import { CommonComponent } from './ngcontentt/common/common.component';
 
 
 
@@ -54,7 +56,9 @@ import { SunglassComponent } from './routing-basics/product/sunglass/sunglass.co
     HeadphoneComponent,
     SmartwatchComponent,
     IphoneComponent,
-    SunglassComponent
+    SunglassComponent,
+    NgcontenttComponent,
+    CommonComponent
     
     
   ],

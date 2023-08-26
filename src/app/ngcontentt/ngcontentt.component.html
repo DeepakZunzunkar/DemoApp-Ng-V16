@@ -1,0 +1,36 @@
+<div class="container apngcnt rounded">
+
+    <h3 class="text-center">Ng Content</h3>
+    <p [style.color]="'#fff'" class="text-center"> If there are only static content change and remainthing things are
+        comman like layout and css an all
+        then we should use ng-content as fallow .
+        A common component can be used multiple time to reprsent different static content
+    </p>
+    <hr class="mb-3">
+    <div class="row text-center">
+        <div class="col-md-6">
+            <app-common>
+                <h5 class="card-title">Sun Glass</h5>
+                <a routerLink="sunglass" class="btn btn-primary btn-sm">view sun glass </a>
+            </app-common>
+        </div>
+        <div class="col-md-6">
+            <app-common>
+                <h5 class="card-title">Headphone</h5>
+                <a routerLink="headphone" class="btn btn-primary btn-sm">view headphone </a>
+            </app-common>
+        </div>
+        <div class="col-md-6">
+            <app-common>
+                <h5 class="card-title">Iphone</h5>
+                <a routerLink="iphone" class="btn btn-primary btn-sm">view iphone </a>
+            </app-common>
+        </div>
+        <div class="col-md-6">
+            <app-common>
+                <h5 class="card-title">Smart Watch </h5>
+                <a routerLink="smartwatch" class="btn btn-primary btn-sm">view smart watch </a>
+            </app-common>
+        </div>
+    </div>
+</div>
