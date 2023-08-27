@@ -33,6 +33,8 @@ import { CommonComponent } from './ngcontentt/common/common.component';
 import { ParentComponent } from './parent/parent.component';
 import { Child1Component } from './parent/child1/child1.component';
 import { DesignUtilityService } from './services/design-utility.service';
+import { ServiceTestComponent } from './service-test/service-test.component';
+import { CardsComponent } from './service-test/cards/cards.component';
 
 
 
@@ -63,7 +65,9 @@ import { DesignUtilityService } from './services/design-utility.service';
     NgcontenttComponent,
     CommonComponent,
     ParentComponent,
-    Child1Component
+    Child1Component,
+    ServiceTestComponent,
+    CardsComponent
     
     
   ],
