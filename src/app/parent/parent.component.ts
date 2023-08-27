@@ -7,17 +7,16 @@ import { Component } from '@angular/core';
 })
 export class ParentComponent {
 
-  productSelected:boolean=false;
-  product:string='';
+  isSelect:boolean=false;
+  selectedProduct:string='';
   isadded:any;
 
   onSelectProduct(product:string){
-    this.productSelected=true;
-    this.product=product;
+    this.isSelect=true;
+    this.selectedProduct=product;
   }
 
-  addToCart(){
-    this.isadded=this.product;
+  onAddedProduct(event:string){
+    this.isadded = event;
   }
-
 }

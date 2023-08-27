@@ -37,16 +37,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12">
-            <div class="app-chld1 rounded text-center py-2">
-                <h4 *ngIf="!productSelected">please select product</h4>
-                <h3 *ngIf="productSelected" class="text-white">{{ product }}</h3>
-                <button class="btn btn-success m-2" (click)="addToCart()">add to cart</button>
-            </div>
-        </div>
-        <div class="clear">
-
-        </div>
+       <app-child1 (addedProduct)="onAddedProduct($event)" [productSelected]="isSelect" [product]="selectedProduct"></app-child1>
     </div>
 
 </div>

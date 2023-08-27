@@ -1,1 +1,7 @@
-<p>child1 works!</p>
+<div class="col-md-12">
+    <div class="app-chld1 rounded text-center py-2">
+        <h4 *ngIf="!productSelected">please select product</h4>
+        <h3 *ngIf="productSelected" class="text-white">{{ product }} is selected</h3>
+        <button class="btn btn-success m-2" (click)="addToCart()">add to cart</button>
+    </div>
+</div>
