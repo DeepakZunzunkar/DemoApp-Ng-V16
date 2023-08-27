@@ -32,6 +32,7 @@ import { NgcontenttComponent } from './ngcontentt/ngcontentt.component';
 import { CommonComponent } from './ngcontentt/common/common.component';
 import { ParentComponent } from './parent/parent.component';
 import { Child1Component } from './parent/child1/child1.component';
+import { DesignUtilityService } from './services/design-utility.service';
 
 
 
@@ -74,7 +75,7 @@ import { Child1Component } from './parent/child1/child1.component';
     CarouselModule.forRoot(),
     AlertModule.forRoot()
   ],
-  providers: [],
+  providers: [DesignUtilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

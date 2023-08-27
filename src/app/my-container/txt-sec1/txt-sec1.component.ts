@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AlertService } from 'src/app/services/alert.service';
+import { DesignUtilityService } from 'src/app/services/design-utility.service';
 
 @Component({
   selector: 'app-txt-sec1',
@@ -7,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class TxtSec1Component {
 
+
+  constructor(private designUtility:DesignUtilityService){
+
+  }
+
+  onSubscribe(){
+    // var alertService = new AlertService();
+    // alertService.messageAlert();
+
+    this.designUtility.messageAlert();
+
+  }
 }
