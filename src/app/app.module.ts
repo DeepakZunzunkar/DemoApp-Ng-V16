@@ -35,6 +35,8 @@ import { Child1Component } from './parent/child1/child1.component';
 import { DesignUtilityService } from './services/design-utility.service';
 import { ServiceTestComponent } from './service-test/service-test.component';
 import { CardsComponent } from './service-test/cards/cards.component';
+import { HeaderComponent } from './header/header.component';
+import { MyHomeComponent } from './my-home/my-home.component';
 
 
 
@@ -67,7 +69,9 @@ import { CardsComponent } from './service-test/cards/cards.component';
     ParentComponent,
     Child1Component,
     ServiceTestComponent,
-    CardsComponent
+    CardsComponent,
+    HeaderComponent,
+    MyHomeComponent
     
     
   ],

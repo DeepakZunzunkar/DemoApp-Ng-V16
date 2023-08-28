@@ -1,0 +1,53 @@
+<!-- phase 2 -->
+<div class="container ph2-dash rounded p-5">
+    <div class="rounded border-start border-info border-5">
+        <div class="alert alert-info">Welcome to DZ App
+            <span [style.float]="'right'"> {{ currentDateTime | date }}</span>
+        </div>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+            [(ngModel)]="appstatus">
+        <label class="form-check-label" for="flexSwitchCheckDefault">{{ appstatus ? 'online' :
+            'offline' }}</label>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container mt-1">
+                <ng-container *ngIf="appstatus">
+                    <ul class="list">
+                        <li>
+                            <a class="nav-link" routerLink="/cmp-basics">Component Basics</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" routerLink="/data-binding">Data Binding Basic</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" routerLink="/directive-basics">Directive Basics</a>
+                        </li>
+
+                        <li>
+                            <a class="nav-link" routerLink="/routin-basics">Routing Basics</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" routerLink="/ng-content">Ng Content</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" routerLink="/cmp-commn">Component Communication</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" routerLink="/service-test">Service Test</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" routerLink="ng-content">Filter</a>
+                        </li>
+                    </ul>
+
+                </ng-container>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

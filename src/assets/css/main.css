@@ -1,0 +1,14 @@
+
+html,
+body,
+div {
+
+    border: 0;
+    margin: 0;
+    padding: 0;
+    color: #40505b;
+}
+
+*{
+    box-sizing: border-box;
+}

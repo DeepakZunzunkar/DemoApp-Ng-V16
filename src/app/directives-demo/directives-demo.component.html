@@ -1,123 +1,125 @@
-<div class="container-fluid">
+<div class="container mt-5">
+    <div class="container-fluid">
 
 
-    <div class="row">
-        <div class="col bg-secondary rounded" [style.margin-right]="'12px'">
-
-            <div class="text-light bg-warning rounded-bottom text-center" [style.font-size]="'20px'"
-                [style.font-weight]="'bolder'">ngIf</div>
-
-
-            <div class="text-light">
-                <span [style.color]="'#bbb80e'">Note: </span> used only when we have two condition to check.
-            </div>
-            <button class="btn btn-primary mt-3 float-left" (click)="onBlockCreate()">create block</button>
-            <button class="btn btn-primary mt-3 float-right" [style.margin-left]="'100px'"
-                (click)="toggleOnBlockCreate()">toggle</button>
-
-            <!-- 
-            <div *ngIf="blockStatus; else elseBlk" class="p-3 mb-2 mt-5 bg-success text-white rounded">
-                block has been created..
-            </div>
-            <ng-template #elseBlk >
-                <div class="p-3 mb-2 mt-5 bg-danger text-white rounded">
-                   No block has been created yet..
+        <div class="row">
+            <div class="col bg-secondary rounded" [style.margin-right]="'12px'">
+    
+                <div class="text-light bg-warning rounded-bottom text-center" [style.font-size]="'20px'"
+                    [style.font-weight]="'bolder'">ngIf</div>
+    
+    
+                <div class="text-light">
+                    <span [style.color]="'#bbb80e'">Note: </span> used only when we have two condition to check.
                 </div>
-            </ng-template> -->
-
-            <div *ngIf="blockStatus; then thenblk else elseBlk"></div>
-            <ng-template #thenblk>
-                <div class="p-3 mb-2 mt-5 bg-success text-white rounded">
+                <button class="btn btn-primary mt-3 float-left" (click)="onBlockCreate()">create block</button>
+                <button class="btn btn-primary mt-3 float-right" [style.margin-left]="'100px'"
+                    (click)="toggleOnBlockCreate()">toggle</button>
+    
+                <!-- 
+                <div *ngIf="blockStatus; else elseBlk" class="p-3 mb-2 mt-5 bg-success text-white rounded">
                     block has been created..
                 </div>
-            </ng-template>
-            <ng-template #elseBlk>
-                <div class="p-3 mb-2 mt-5 bg-danger text-white rounded">
-                    No block has been created yet..
+                <ng-template #elseBlk >
+                    <div class="p-3 mb-2 mt-5 bg-danger text-white rounded">
+                       No block has been created yet..
+                    </div>
+                </ng-template> -->
+    
+                <div *ngIf="blockStatus; then thenblk else elseBlk"></div>
+                <ng-template #thenblk>
+                    <div class="p-3 mb-2 mt-5 bg-success text-white rounded">
+                        block has been created..
+                    </div>
+                </ng-template>
+                <ng-template #elseBlk>
+                    <div class="p-3 mb-2 mt-5 bg-danger text-white rounded">
+                        No block has been created yet..
+                    </div>
+                </ng-template>
+            </div>
+            <div class="col-6 bg-secondary rounded" [style.margin-right]="'12px'">
+                <div class="text-light bg-info rounded-bottom text-center" [style.font-size]="'20px'"
+                    [style.font-weight]="'bolder'">ngFor</div>
+                <div class="text-light">
+                    <span [style.color]="'#bbb80e'">Note: </span>
+                    it is used to display data of a collections.
                 </div>
-            </ng-template>
-        </div>
-        <div class="col-6 bg-secondary rounded" [style.margin-right]="'12px'">
-            <div class="text-light bg-info rounded-bottom text-center" [style.font-size]="'20px'"
-                [style.font-weight]="'bolder'">ngFor</div>
-            <div class="text-light">
-                <span [style.color]="'#bbb80e'">Note: </span>
-                it is used to display data of a collections.
+                <table class="table table-hover">
+                    <thead class="thead-dark" [style.background]="'black'">
+                        <tr>
+                            <th scope="col">Sr.No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor="let product of products; first as i"> -->
+                        <!-- <tr *ngFor="let product of products; last as i"> -->
+                        <!-- <tr *ngFor="let product of products; odd as i"> -->
+                        <!-- <tr *ngFor="let product of products; even as i"> -->
+                        <tr *ngFor="let product of products; index as i">
+                            <!-- <td><img src="{{product.proImg}}" width="70" alt=""> </td> -->
+                            <td>{{ i }}</td>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.id }}</td>
+                            <td>{{ product.price }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <table class="table table-hover">
-                <thead class="thead-dark" [style.background]="'black'">
-                    <tr>
-                        <th scope="col">Sr.No</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">ID</th>
-                        <th scope="col">Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- <tr *ngFor="let product of products; first as i"> -->
-                    <!-- <tr *ngFor="let product of products; last as i"> -->
-                    <!-- <tr *ngFor="let product of products; odd as i"> -->
-                    <!-- <tr *ngFor="let product of products; even as i"> -->
-                    <tr *ngFor="let product of products; index as i">
-                        <!-- <td><img src="{{product.proImg}}" width="70" alt=""> </td> -->
-                        <td>{{ i }}</td>
-                        <td>{{ product.name }}</td>
-                        <td>{{ product.id }}</td>
-                        <td>{{ product.price }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col bg-secondary rounded">
-            <div class="text-light bg-success rounded-bottom text-center" [style.font-size]="'20px'"
-                [style.font-weight]="'bolder'">ngSwitch</div>
-            <div class="text-light">
-                <span [style.color]="'#bbb80e'">Note: </span> used only when we have multiple condition to check.
+            <div class="col bg-secondary rounded">
+                <div class="text-light bg-success rounded-bottom text-center" [style.font-size]="'20px'"
+                    [style.font-weight]="'bolder'">ngSwitch</div>
+                <div class="text-light">
+                    <span [style.color]="'#bbb80e'">Note: </span> used only when we have multiple condition to check.
+                </div>
+                <div class="mt-2">
+                    <alert type="success" [ngSwitch]="selectedProduct">
+                        <strong *ngSwitchDefault>Please select product</strong>
+                        <strong *ngSwitchCase="'Laptop'">Laptop</strong>
+                        <strong *ngSwitchCase="'Mobile'">Mobile</strong>
+                        <strong *ngSwitchCase="'TV'">TV</strong>
+                        <strong *ngSwitchCase="'Washing Machine'">Washing Machine</strong>
+                    </alert>
+    
+                </div>
+                <div class="float-right">
+                    <select class="form-control mt-3" (change)="getProduct($event)" name="" id="">
+                        <option value="default">Select Product</option>
+                        <option value="Laptop">Laptop</option>
+                        <option value="Mobile">Mobile</option>
+                        <option value="TV">TV</option>
+                        <option value="Washing Machine">Washing Machine</option>
+                    </select>
+                </div>
+    
+    
             </div>
-            <div class="mt-2">
-                <alert type="success" [ngSwitch]="selectedProduct">
-                    <strong *ngSwitchDefault>Please select product</strong>
-                    <strong *ngSwitchCase="'Laptop'">Laptop</strong>
-                    <strong *ngSwitchCase="'Mobile'">Mobile</strong>
-                    <strong *ngSwitchCase="'TV'">TV</strong>
-                    <strong *ngSwitchCase="'Washing Machine'">Washing Machine</strong>
-                </alert>
-
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <input type="text" #uname placeholder="enter name" class="form-control">
             </div>
-            <div class="float-right">
-                <select class="form-control mt-3" (change)="getProduct($event)" name="" id="">
-                    <option value="default">Select Product</option>
-                    <option value="Laptop">Laptop</option>
-                    <option value="Mobile">Mobile</option>
-                    <option value="TV">TV</option>
-                    <option value="Washing Machine">Washing Machine</option>
-                </select>
+            <div class="col-md-3">
+                <button class="btn btn-success" (click)="addUser(uname)">
+                    create user
+                </button>
+    
+                <button class="btn btn-danger m-2" (click)="removeTopUser()">
+                    Remove Top
+                </button>
             </div>
-
-
+            
         </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col-md-3">
-            <input type="text" #uname placeholder="enter name" class="form-control">
+        <div class="row mt-2">
+            <ul class="list-group col-md-3">
+                <li *ngFor="let user of users;index as i" class="list-group-item list-group-item-action">
+                      {{ user.name + i }}  
+                      <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeUser(i)" [style.float]="'right'">remove</button>
+                </li>
+            </ul>
         </div>
-        <div class="col-md-3">
-            <button class="btn btn-success" (click)="addUser(uname)">
-                create user
-            </button>
-
-            <button class="btn btn-danger m-2" (click)="removeTopUser()">
-                Remove Top
-            </button>
-        </div>
-        
-    </div>
-    <div class="row mt-2">
-        <ul class="list-group col-md-3">
-            <li *ngFor="let user of users;index as i" class="list-group-item list-group-item-action">
-                  {{ user.name + i }}  
-                  <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeUser(i)" [style.float]="'right'">remove</button>
-            </li>
-        </ul>
     </div>
 </div>
