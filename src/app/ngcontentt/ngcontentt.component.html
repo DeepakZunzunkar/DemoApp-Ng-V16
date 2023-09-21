@@ -1,36 +1,68 @@
 <div class="container apngcnt rounded mt-2">
 
-    <h3 class="text-center">Ng Content</h3>
-    <p [style.color]="'#fff'" class="text-center"> If there are only static content change and remainthing things are
-        comman like layout and css an all
-        then we should use ng-content as fallow .
-        A common component can be used multiple time to reprsent different static content
-    </p>
-    <hr class="mb-3">
-    <div class="row text-center">
-        <div class="col-md-6">
-            <app-common>
-                <h5 class="card-title">Sun Glass</h5>
-                <a routerLink="sunglass" class="btn btn-primary btn-sm">view sun glass </a>
-            </app-common>
+    <div style="border: 2px solid red;">
+        <h3 class="text-center">Ng Content</h3>
+        <p [style.color]="'#fff'" class="text-center"> If there are only static content change and remainthing things
+            are
+            comman like layout and css an all
+            then we should use ng-content as fallow .
+            A common component can be used multiple time to reprsent different static content
+        </p>
+        <hr class="mb-3">
+        <div class="row text-center">
+            <div class="col-md-6">
+                <app-common>
+                    <h5 class="card-title">Sun Glass</h5>
+                    <a routerLink="sunglass" class="btn btn-primary btn-sm">view sun glass </a>
+                </app-common>
+            </div>
+            <div class="col-md-6">
+                <app-common>
+                    <h5 class="card-title">Headphone</h5>
+                    <a routerLink="headphone" class="btn btn-primary btn-sm">view headphone </a>
+                </app-common>
+            </div>
+            <div class="col-md-6">
+                <app-common>
+                    <h5 class="card-title">Iphone</h5>
+                    <a routerLink="iphone" class="btn btn-primary btn-sm">view iphone </a>
+                </app-common>
+            </div>
+            <div class="col-md-6">
+                <app-common>
+                    <h5 class="card-title">Smart Watch </h5>
+                    <a routerLink="smartwatch" class="btn btn-primary btn-sm">view smart watch </a>
+                </app-common>
+            </div>
         </div>
-        <div class="col-md-6">
-            <app-common>
-                <h5 class="card-title">Headphone</h5>
-                <a routerLink="headphone" class="btn btn-primary btn-sm">view headphone </a>
-            </app-common>
+    </div>
+    <div [ngStyle]="{'background':'#f3f3f3','color':'black','border':'2px solid green'}">
+        <h3 class="text-center">Ng Container</h3>
+        <p class="text-center"> we will get template parser errors: can't have multiple template binding on one element
+            if we use two directive on same element.
+            if we have two directive to apply then we have take two div which increase space so instead of that we can
+            have
+            ng-container
+        </p>
+        <div class="form-check form-switch m-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                [(ngModel)]="status">
+            <label class="form-check-label" for="flexSwitchCheckDefault">{{ status ? 'show' :
+                'hide' }}</label>
         </div>
-        <div class="col-md-6">
-            <app-common>
-                <h5 class="card-title">Iphone</h5>
-                <a routerLink="iphone" class="btn btn-primary btn-sm">view iphone </a>
-            </app-common>
-        </div>
-        <div class="col-md-6">
-            <app-common>
-                <h5 class="card-title">Smart Watch </h5>
-                <a routerLink="smartwatch" class="btn btn-primary btn-sm">view smart watch </a>
-            </app-common>
-        </div>
+        <hr class="mb-3">
+        <ng-container *ngIf="status">
+            <ul class="list-group w-50 align-items-center d-grid gap-3">
+                <!-- <ul *ngIf="status" class="list-group w-50 align-items-center d-grid gap-3"> -->
+                <li *ngFor="let product of products"
+                    class="list-group-item d-flex justify-content-between align-items-center">
+                    <!-- <li *ngIf="status" *ngFor="let product of products" class="list-group-item d-flex justify-content-between align-items-center"> -->
+                    <!-- <span class="text-center fw-bold">{{ product.name +" Rs "+ product.price+" /- " }}  </span> -->
+                    <span class="text-center fw-bold">{{ product.name }} </span><span>{{ " Rs "+ product.price+" /-
+                        "}}</span>
+                    <span class="badge bg-primary rounded-pill">{{ product.quantity }}</span>
+                </li>
+            </ul>
+        </ng-container>
     </div>
 </div>
