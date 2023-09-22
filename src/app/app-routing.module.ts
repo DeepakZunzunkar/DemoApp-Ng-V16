@@ -19,6 +19,7 @@ import { RoutingBasicsComponent } from './routing-basics/routing-basics.componen
 import { NgcontenttComponent } from './ngcontentt/ngcontentt.component';
 import { ParentComponent } from './parent/parent.component';
 import { ServiceTestComponent } from './service-test/service-test.component';
+import { Exercise01Component } from './exercise01/exercise01.component';
 
 const routes: Routes = [
 
@@ -75,6 +76,7 @@ const routes: Routes = [
   { path: "ng-content", component: NgcontenttComponent },
   { path: "cmp-commn", component: ParentComponent },
   { path: "service-test",component: ServiceTestComponent },
+  { path: "exercise01",component: Exercise01Component },
   { path: "**", component: PageNotFoundComponent }
 ];
 

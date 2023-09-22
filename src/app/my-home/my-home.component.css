@@ -41,3 +41,9 @@ ul.list li a:hover{
     box-shadow: 0 0 60px #b3cada inset;
     text-decoration: none;
 } 
+
+.exer{
+    background: #477698 !important;
+    color: white !important;
+    font-size: 20px;
+}

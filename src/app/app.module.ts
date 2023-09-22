@@ -37,6 +37,8 @@ import { ServiceTestComponent } from './service-test/service-test.component';
 import { CardsComponent } from './service-test/cards/cards.component';
 import { HeaderComponent } from './header/header.component';
 import { MyHomeComponent } from './my-home/my-home.component';
+import { Exercise01Component } from './exercise01/exercise01.component';
+import { Child01Component } from './exercise01/child01/child01.component';
 
 
 
@@ -71,7 +73,9 @@ import { MyHomeComponent } from './my-home/my-home.component';
     ServiceTestComponent,
     CardsComponent,
     HeaderComponent,
-    MyHomeComponent
+    MyHomeComponent,
+    Exercise01Component,
+    Child01Component
     
     
   ],
