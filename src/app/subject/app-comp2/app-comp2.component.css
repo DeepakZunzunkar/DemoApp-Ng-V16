@@ -1,0 +1,29 @@
+.box{
+    
+    background: #fdfdfd;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    width: 80%;
+}
+
+
+strong{
+    color: rgb(0, 255, 21);
+}
+
+input{
+    padding-left: 5px;
+    border: 1px solid rgba(14, 236, 14, 0.925);
+    border-radius:5px ;
+    margin: 5px;
+}
+
+button{
+
+    background: rgb(55, 184, 43);
+    border: 1px solid rgb(47, 238, 22);
+    border-radius:5px;
+    font-size: large;
+}

@@ -39,6 +39,11 @@ import { HeaderComponent } from './header/header.component';
 import { MyHomeComponent } from './my-home/my-home.component';
 import { Exercise01Component } from './exercise01/exercise01.component';
 import { Child01Component } from './exercise01/child01/child01.component';
+import { SubjectComponent } from './subject/subject.component';
+import { AppComp1Component } from './subject/app-comp1/app-comp1.component';
+import { AppComp2Component } from './subject/app-comp2/app-comp2.component';
+import { AppComp3Component } from './subject/app-comp3/app-comp3.component';
+import { AppComp4Component } from './subject/app-comp4/app-comp4.component';
 
 
 @NgModule({
@@ -74,7 +79,12 @@ import { Child01Component } from './exercise01/child01/child01.component';
     HeaderComponent,
     MyHomeComponent,
     Exercise01Component,
-    Child01Component
+    Child01Component,
+    SubjectComponent,
+    AppComp1Component,
+    AppComp2Component,
+    AppComp3Component,
+    AppComp4Component
     
     
   ],

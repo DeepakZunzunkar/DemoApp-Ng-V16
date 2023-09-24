@@ -1,0 +1,24 @@
+<div class="container sbj">
+    <h2>Subject</h2>
+    <p>This is used to communicate between component
+       here subject is created in service and that service is injected in component where it is required to use
+       and each component subscribe the subject and update the subject value by using next method .
+       basically it is used to broadcast the value and do the cross component communications.
+    </p>
+    <h4>Behaviour Subjects</h4>
+    <p>In Behaviour subject we can set initial value of it but in Subject can not set initial value
+        here we don't need to set initial value in each component , we can set in service where Behaviour subject is define 
+    </p>
+    <hr class="mb-3">
+    <h5>User Name </h5><span style="color: #FFD700;"> <strong>{{ username }}  </strong></span>
+
+    <div class="row mt-3">
+        <div class="col"><app-app-comp1></app-app-comp1></div>
+        <div class="col"><app-app-comp2></app-app-comp2></div>
+    </div>
+    
+    <div class="row">
+        <div class="col"><app-app-comp3></app-app-comp3></div>
+        <div class="col"><app-app-comp4></app-app-comp4></div>
+    </div>
+</div>

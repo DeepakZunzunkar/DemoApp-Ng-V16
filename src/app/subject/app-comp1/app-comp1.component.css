@@ -1,0 +1,29 @@
+.box{
+    
+    background: #fdfdfd;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    width: 80%;
+}
+
+
+strong{
+    color: #f75e0b;
+}
+
+input{
+    padding-left: 5px;
+    border: 1px solid #f75e0b;
+    border-radius:5px ;
+    margin: 5px;
+}
+
+button{
+
+    background: #f75e0b;
+    border: 1px solid #f75e0b;
+    border-radius:5px;
+    font-size: large;
+}

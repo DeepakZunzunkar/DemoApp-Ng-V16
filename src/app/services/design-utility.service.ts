@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,8 @@ export class DesignUtilityService {
 
   constructor() { }
 
+  // userName=new Subject<any>();
+  userName=new BehaviorSubject<any>("DZ");
 
   currentDate :Date =new Date(); 
   
