@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyContainerComponent } from './my-container/my-container.component';
@@ -39,7 +39,6 @@ import { HeaderComponent } from './header/header.component';
 import { MyHomeComponent } from './my-home/my-home.component';
 import { Exercise01Component } from './exercise01/exercise01.component';
 import { Child01Component } from './exercise01/child01/child01.component';
-
 
 
 @NgModule({
@@ -83,6 +82,7 @@ import { Child01Component } from './exercise01/child01/child01.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     TabsModule.forRoot(),
     CarouselModule.forRoot(),
     AlertModule.forRoot()

@@ -1,28 +1,49 @@
-<div class="container src-bsc rounded text-center" >
-
+<div class="container src-bsc rounded text-center">
     <h3>Service Test</h3>
     <hr class="mb-3">
     <table class="table table-info table-hover ">
         <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">name</th>
-            <th scope="col">price</th>
-            <th scope="col">quantity</th>
-          </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">name</th>
+                <th scope="col">price</th>
+                <th scope="col">quantity</th>
+            </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let product of products; index as i" >
-            <th>{{ i+1}}</th>
-            <td>{{ product.name }}</td>
-            <td>{{ product.price}}</td>
-            <td>{{ product.quantity }}</td>
-          </tr>
-          
-        </tbody>
-      </table>
-</div>
+            <tr *ngFor="let product of products; index as i">
+                <th>{{ i+1}}</th>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price}}</td>
+                <td>{{ product.quantity }}</td>
+            </tr>
 
+        </tbody>
+    </table>
+</div>
+<div class="container src-bsc rounded text-center mt-2">
+    <h3>Observable and HttpClient Test</h3>
+    <hr class="mb-3">
+    <table class="table table-info table-hover ">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">name</th>
+                <th scope="col">username</th>
+                <th scope="col">email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users; index as i">
+                <th>{{ user.id }}</th>
+                <td>{{ user.name }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
 
 
 
