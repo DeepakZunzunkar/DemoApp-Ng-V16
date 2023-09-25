@@ -1,0 +1,27 @@
+.box{
+    
+    background: #fff7f3;
+    border: 1px solid #f75e0b;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    width: 80%;
+    font-size: 18px;
+    /* text-align: center; */
+}
+
+input{
+    padding-left: 5px;
+    border: 1px solid #f75e0b;
+    border-radius:5px ;
+    margin: 5px;
+}
+
+button{
+
+    background: #f75e0b;
+    color: #fff7f3;
+    border: 1px solid #f75e0b;
+    border-radius:5px;
+    font-size: large;
+}

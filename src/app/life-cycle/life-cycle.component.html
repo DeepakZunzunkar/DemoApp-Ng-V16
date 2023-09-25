@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row  justify-content-center mb-5">
+        <div class="col-xl-6 col-lg-8">
+            <h2 class="font-weight-bold">Lifecycle phase</h2>
+            <p class="text-muted">
+                Whenever component is getting create or initialize ,angular has give certain life cycle hooks i.e method.
+                In this component creation or initilisation process, angular have given chance to execute some code with respect to each like cycle method.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box text-center justify-content-center mb-3">
+                <h5>Parent</h5>
+                <hr>
+                <input type="text" #myInput placeholder="type here..">
+                <button (click)="onSubmit(myInput)">submit</button>
+            </div>
+            <app-lchild *ngIf="isExist" [inputValRecived]="inputVal">
+                ng-content data test <strong>{{ inputVal }}</strong>
+            </app-lchild>
+            <button class="btn btn-danger" (click)="destroy()">destroy</button>
+        </div>
+        <div class="col-md-6">
+            <app-timeline></app-timeline>
+        </div>
+    </div>
+    
+</div>
