@@ -1,0 +1,34 @@
+<div class="container">
+    <h5>ViewChild , Renderer and ContentChild </h5>
+    <hr>
+    <p>
+        we can modify and manupulate DOM element with the help of view child decortor
+        and we also can do the same with child Component element from the parent Component.
+        But this is not correct way to access the DOM element.
+    </p>
+    <p>Angular has provide the better way to access and manupulate DOM element is by Using Renderer.
+        Renderer is Angular inbuilt class we use it as service in angular and using which we can do manupulation in DOM.</p>
+    <p>if we using child component and projecting content using ng-content in child component then to access and modify that ng-content we can use ContentChild decortor </p>
+    <div #box>
+        <h3>User Name is : <strong class="text-success">{{ userName }}</strong> </h3>
+        <br>
+        <div #carea>
+            <button (click)="changeChildProp()" class="btn btn-outline-primary">change child property</button>
+            <br><br>
+            <button (click)="calledChildMethod()" class="btn btn-outline-primary">called child method</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <h6>Child Component</h6>
+        <div class="col-md-6">
+            <app-txt-sec1></app-txt-sec1>
+        </div>
+        <div class="col-md-6" #cmm>
+            <app-common>
+                <h5 #childhead5 class="card-title">Sun Glass</h5>
+                <a #childancr routerLink="/lifecycle" class="btn btn-primary btn-sm">view sun glass </a>
+            </app-common>
+        </div>
+    </div>
+</div>

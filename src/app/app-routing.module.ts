@@ -22,6 +22,7 @@ import { ServiceTestComponent } from './service-test/service-test.component';
 import { Exercise01Component } from './exercise01/exercise01.component';
 import { SubjectComponent } from './subject/subject.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { ViewchildComponent } from './viewchild/viewchild.component';
 
 
 const routes: Routes = [
@@ -82,6 +83,8 @@ const routes: Routes = [
   { path: "exercise01",component: Exercise01Component },
   { path: "subject",component: SubjectComponent },
   { path: "lifecycle",component: LifeCycleComponent },
+  { path: "viewchild",component: ViewchildComponent },
+
   { path: "**", component: PageNotFoundComponent }
 ];
 

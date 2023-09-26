@@ -9,6 +9,7 @@ import { DesignUtilityService } from 'src/app/services/design-utility.service';
 })
 export class TxtSec1Component {
 
+  txthead:string="Develop Across All Platform"
 
   constructor(private designUtility:DesignUtilityService){
 

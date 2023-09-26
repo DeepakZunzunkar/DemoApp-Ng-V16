@@ -24,8 +24,10 @@
       "dom"
     ],
     "allowJs": true,
-    "checkJs": true
+    "checkJs": true,
+    "strictPropertyInitialization": false
   },
+  
   "exclude": ["node_modules", "**/node_modules/*"],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

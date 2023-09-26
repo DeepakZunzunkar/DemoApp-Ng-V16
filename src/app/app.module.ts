@@ -47,6 +47,7 @@ import { AppComp4Component } from './subject/app-comp4/app-comp4.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { LchildComponent } from './life-cycle/lchild/lchild.component';
 import { TimelineComponent } from './life-cycle/timeline/timeline.component';
+import { ViewchildComponent } from './viewchild/viewchild.component';
 
 
 @NgModule({
@@ -90,7 +91,8 @@ import { TimelineComponent } from './life-cycle/timeline/timeline.component';
     AppComp4Component,
     LifeCycleComponent,
     LchildComponent,
-    TimelineComponent
+    TimelineComponent,
+    ViewchildComponent
     
     
   ],
