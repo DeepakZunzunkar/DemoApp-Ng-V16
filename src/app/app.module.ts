@@ -48,6 +48,7 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { LchildComponent } from './life-cycle/lchild/lchild.component';
 import { TimelineComponent } from './life-cycle/timeline/timeline.component';
 import { ViewchildComponent } from './viewchild/viewchild.component';
+import { TestDirectiveDirective } from './appdirective/test-directive.directive';
 
 
 @NgModule({
@@ -92,7 +93,8 @@ import { ViewchildComponent } from './viewchild/viewchild.component';
     LifeCycleComponent,
     LchildComponent,
     TimelineComponent,
-    ViewchildComponent
+    ViewchildComponent,
+    TestDirectiveDirective
     
     
   ],

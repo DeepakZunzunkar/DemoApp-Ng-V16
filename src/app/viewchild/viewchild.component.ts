@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild, asN
 import { TxtSec1Component } from '../my-container/txt-sec1/txt-sec1.component';
 import { TxtSec2Component } from '../my-container/txt-sec2/txt-sec2.component';
 import { CommonComponent } from '../ngcontentt/common/common.component';
+import { TestDirectiveDirective } from '../appdirective/test-directive.directive';
 
 @Component({
   selector: 'app-viewchild',
@@ -27,7 +28,13 @@ export class ViewchildComponent implements OnInit,AfterViewInit{
 
   @ViewChild(CommonComponent)
   appCommn:CommonComponent;
- 
+  
+
+  //access directive same as component
+  
+  @ViewChild(TestDirectiveDirective)
+  myDir : TestDirectiveDirective;
+
   constructor(private renderer:Renderer2){
     
   }
@@ -45,7 +52,7 @@ export class ViewchildComponent implements OnInit,AfterViewInit{
     console.log(this.child);
 
     // this.renderer.setStyle(this.cmm.nativeElement,"background","#fff700");
-    
+
     this.renderer.setStyle(this.carea.nativeElement,"background","#fff700");
     this.renderer.setStyle(this.carea.nativeElement,"width","50%");
     this.renderer.addClass(this.carea.nativeElement,"box");
@@ -60,4 +67,9 @@ export class ViewchildComponent implements OnInit,AfterViewInit{
   calledChildMethod(){
     this.child.onSubscribe();
   }
+
+  changeColor(color:any){
+    this.myDir.changeBg(color);
+  }
+
 }
