@@ -1,0 +1,31 @@
+<div class="container">
+
+    <div class="card">
+        <div class="card-body">
+            <h2>{{ header | uppercase }}</h2>
+            <p class="card-title text-muted mb-5">
+                {{ description | titlecase }}
+            </p>
+            Ex:Date pipe    
+            <p class="card-subtitle m-2">
+                <!-- here we can use date pipe parameter as below : refer official docs 
+                    'short','medium'...
+                    we also can use multiple on same element
+                 -->
+                {{ date | date :'fullDate' | uppercase }}
+            </p>
+            <hr>
+            Ex: slice pipe
+            <p> {{ description | slice:5:35 }}</p>
+        </div>
+    </div>
+    
+    <div class="card mt-2">
+        <div class="card-body">
+            <h2>{{ header1 | uppercase }}</h2>
+            <p class="card-title text-muted mb-5">
+                {{ description1 | titlecase }}
+            </p>
+        </div>
+    </div>      
+</div>

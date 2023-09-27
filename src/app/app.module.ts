@@ -53,6 +53,7 @@ import { HostListnerBindingComponent } from './host-listner-binding/host-listner
 import { TestHostLDirective } from './appdirective/test-host-ldirective.directive';
 import { TestHostBDirective } from './appdirective/test-host-b.directive';
 import { DropdownDirective } from './appdirective/dropdown.directive';
+import { PipesComponent } from './pipes/pipes.component';
 
 
 @NgModule({
@@ -102,7 +103,8 @@ import { DropdownDirective } from './appdirective/dropdown.directive';
     HostListnerBindingComponent,
     TestHostLDirective,
     TestHostBDirective,
-    DropdownDirective
+    DropdownDirective,
+    PipesComponent
     
     
   ],

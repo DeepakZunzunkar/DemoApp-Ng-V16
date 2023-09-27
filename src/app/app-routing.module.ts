@@ -24,6 +24,7 @@ import { SubjectComponent } from './subject/subject.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { ViewchildComponent } from './viewchild/viewchild.component';
 import { HostListnerBindingComponent } from './host-listner-binding/host-listner-binding.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 
 const routes: Routes = [
@@ -86,6 +87,7 @@ const routes: Routes = [
   { path: "lifecycle",component: LifeCycleComponent },
   { path: "viewchild",component: ViewchildComponent },
   { path: "hostlb",component: HostListnerBindingComponent },
+  { path: "pipes",component: PipesComponent },
 
   { path: "**", component: PageNotFoundComponent }
 ];
