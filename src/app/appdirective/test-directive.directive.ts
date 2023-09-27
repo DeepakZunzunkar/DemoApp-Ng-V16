@@ -11,7 +11,6 @@ export class TestDirectiveDirective {
 
    }
 
-
    changeBg(color:any){
     this.renderer.setStyle(this.elementRef.nativeElement,"background",color);
     this.renderer.setStyle(this.elementRef.nativeElement,"color",'#fff');

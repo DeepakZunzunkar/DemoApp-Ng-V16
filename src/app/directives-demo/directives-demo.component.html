@@ -1,10 +1,50 @@
 <div class="container mt-5">
     <div class="container-fluid">
 
-
+        <h3>Directive</h3>
+        <p>It is most basic building block and component is also the same most basic building block 
+           but the difference is component is sub-part of directive means component is also a directive.
+           we called it as "self content directive" because it has its own template i.e html but as compare to directive 
+           there we have only normal logic which we can attach to any element in html then after it is reflecting in DOM
+        </p>
         <div class="row">
+            <div class="col-md-4">
+                  <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 style="color: #00b300;">Component Directive</h5>
+                        <p>Directive with own template (HTML)</p>
+                    </div>
+                  </div>  
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 style="color: #00cccc;">Structural Directive</h5>
+                        <ul>
+                            <li>ngIf</li>
+                            <li>ngFor</li>
+                            <li>ngSwitch</li>
+                        </ul>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 style="color: #ffd11a;">Attribute Directive</h5>
+                        <p>for change appereance and Begaviour of element</p>
+                        <ul>
+                            <li>ngStyle</li>
+                            <li>ngClass</li>
+                        </ul>
+                        <p>we can create our own i.e custom attribute directive </p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="row mt-2">
             <div class="col bg-secondary rounded" [style.margin-right]="'12px'">
-    
+
                 <div class="text-light bg-warning rounded-bottom text-center" [style.font-size]="'20px'"
                     [style.font-weight]="'bolder'">ngIf</div>
     

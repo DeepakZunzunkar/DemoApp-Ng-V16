@@ -49,6 +49,8 @@ import { LchildComponent } from './life-cycle/lchild/lchild.component';
 import { TimelineComponent } from './life-cycle/timeline/timeline.component';
 import { ViewchildComponent } from './viewchild/viewchild.component';
 import { TestDirectiveDirective } from './appdirective/test-directive.directive';
+import { HostListnerBindingComponent } from './host-listner-binding/host-listner-binding.component';
+import { TestHostLDirectiveDirective } from './appdirective/test-host-ldirective.directive';
 
 
 @NgModule({
@@ -94,7 +96,9 @@ import { TestDirectiveDirective } from './appdirective/test-directive.directive'
     LchildComponent,
     TimelineComponent,
     ViewchildComponent,
-    TestDirectiveDirective
+    TestDirectiveDirective,
+    HostListnerBindingComponent,
+    TestHostLDirectiveDirective
     
     
   ],

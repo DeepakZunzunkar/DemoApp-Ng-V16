@@ -23,6 +23,7 @@ import { Exercise01Component } from './exercise01/exercise01.component';
 import { SubjectComponent } from './subject/subject.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { ViewchildComponent } from './viewchild/viewchild.component';
+import { HostListnerBindingComponent } from './host-listner-binding/host-listner-binding.component';
 
 
 const routes: Routes = [
@@ -84,6 +85,7 @@ const routes: Routes = [
   { path: "subject",component: SubjectComponent },
   { path: "lifecycle",component: LifeCycleComponent },
   { path: "viewchild",component: ViewchildComponent },
+  { path: "hostlb",component: HostListnerBindingComponent },
 
   { path: "**", component: PageNotFoundComponent }
 ];

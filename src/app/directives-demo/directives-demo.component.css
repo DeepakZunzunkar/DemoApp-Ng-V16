@@ -2,3 +2,9 @@
     background: #000 !important;
     color: #fff !important;
 }
+
+.card h5{
+    /* font-weight: 500; */
+    /* color: #00ffff; */
+    font-weight: bolder ;
+}
