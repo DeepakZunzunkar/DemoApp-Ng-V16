@@ -17,26 +17,35 @@
                     <hr>
                     <div class="card" [class.msovr]="mypro1">
                         <h6 class="text-center card-subtitle m-3 text-muted">Host Listner use at Component</h6>
-
                     </div>
-                    <div class="card mt-2" appTestHostLDirective>
+                    <div class="card mt-2" appTestHostL>
                         <h6 class="text-center card-subtitle m-3 text-muted">Host Listner use at Directive</h6>
-
                     </div>
                 </div>
-
-
             </div>
         </div>
         <span class="col-xl-1 vl"></span>
         <div class="col-xl-5">
-            <div class="card" appTestHostLDirective>
+            <div class="card" appTestHostB>
                 <div class="card-body">
-
                     <h2 class="font-weight-bold">HOSTBINDING</h2>
                     <p class="text-muted">
-        
+                        it is used to bind property on host element.
+                        instead of using renderer we can use Host binding it's alernative way for it.
                     </p>
+                    <hr>
+
+                    <div class="custom-dropdown" >
+                        <span class="dropdown-header" appDropdown>
+                            My Dropdown
+                        </span>
+                        <div class="dropdown-content">
+                            <a href="">item 1</a>
+                            <a href="">item 2</a>
+                            <a href="">item 3</a>
+                            <a href="">item 4</a>
+                        </div>
+                    </div>
 
                 </div>
             </div>

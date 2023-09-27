@@ -1,9 +1,9 @@
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appTestHostLDirective]'
+  selector: '[appTestHostL]'
 })
-export class TestHostLDirectiveDirective {
+export class TestHostLDirective {
 
   constructor(private renderer:Renderer2,private elementRef:ElementRef) {
     
