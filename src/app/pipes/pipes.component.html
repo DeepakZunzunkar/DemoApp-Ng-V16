@@ -6,7 +6,7 @@
             <p class="card-title text-muted mb-5">
                 {{ description | titlecase }}
             </p>
-            Ex:Date pipe    
+            Ex:Date pipe
             <p class="card-subtitle m-2">
                 <!-- here we can use date pipe parameter as below : refer official docs 
                     'short','medium'...
@@ -19,13 +19,59 @@
             <p> {{ description | slice:5:35 }}</p>
         </div>
     </div>
-    
+
     <div class="card mt-2">
         <div class="card-body">
             <h2>{{ header1 | uppercase }}</h2>
             <p class="card-title text-muted mb-5">
                 {{ description1 | titlecase }}
             </p>
+            <p>{{ decrip2 | dzsubstring }}</p>
+            <table class="table table-info table-hover ">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">name</th>
+                        <th scope="col">username</th>
+                        <th scope="col">email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users; index as i">
+                        <th>{{ user.id }}</th>
+                        <td>{{ user.name | dz:10}}</td>
+                        <td>{{ user.username | dz:8 }}</td>
+                        <td>{{ user.email }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
         </div>
-    </div>      
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body">
+            <h2>{{ header2 | uppercase }}</h2>
+            <input type="text" [(ngModel)]="myInput"  placeholder="search product by name ">
+
+            <table class="table table-info table-hover ">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">name</th>
+                        <th scope="col">price</th>
+                        <th scope="col">quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products | namefilter:myInput index as i ">
+                        <th>{{ i+1}}</th>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price}}</td>
+                        <td>{{ product.quantity }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

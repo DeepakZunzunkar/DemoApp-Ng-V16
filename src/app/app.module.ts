@@ -54,6 +54,9 @@ import { TestHostLDirective } from './appdirective/test-host-ldirective.directiv
 import { TestHostBDirective } from './appdirective/test-host-b.directive';
 import { DropdownDirective } from './appdirective/dropdown.directive';
 import { PipesComponent } from './pipes/pipes.component';
+import { DzPipe } from './app-pipe/dz.pipe';
+import { dzSubString } from './app-pipe/dz-sub-string';
+import { NameFilterPipe } from './app-pipe/name-filter.pipe';
 
 
 @NgModule({
@@ -104,7 +107,10 @@ import { PipesComponent } from './pipes/pipes.component';
     TestHostLDirective,
     TestHostBDirective,
     DropdownDirective,
-    PipesComponent
+    PipesComponent,
+    DzPipe,
+    dzSubString,
+    NameFilterPipe
     
     
   ],
