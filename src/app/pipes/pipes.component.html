@@ -52,7 +52,23 @@
     <div class="card mt-2">
         <div class="card-body">
             <h2>{{ header2 | uppercase }}</h2>
-            <input type="text" [(ngModel)]="myInput"  placeholder="search product by name ">
+            <div class="row justify-content-center">
+                <div class="col-md-3 form-inline mb-2">
+                    <input type="text" class="form-control mb-2" #addPrdVal placeholder="add product">
+                    <button type="button" class="btn btn-primary ml-2" (click)="addPrd(addPrdVal)">Add</button>
+                </div>
+            </div>  
+            <hr>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <input type="text" class="myInp form-control" [(ngModel)]="myInput" placeholder="search product by name ">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-primary" (click)="openModal(template)">Add Product</button>
+                </div>
+            </div>
 
             <table class="table table-info table-hover ">
                 <thead>
@@ -74,4 +90,48 @@
             </table>
         </div>
     </div>
+    <div class="card mt-2">
+        <div class="card-body">
+            <h2>{{ header3 | uppercase }}</h2>
+            <p class="card-title text-muted mb-3">
+                {{ description3 | titlecase }}
+            </p>
+            <p class="m-3">{{description3_1 | titlecase }}</p>
+            <p class="m-3">{{description3_1 | titlecase }}</p>
+            <p class="card-title text-muted">Note : in above filter card , we have implemented impure pipe</p>
+        </div>
+    </div>
+    <ng-template #template>
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">Add Product </h4>
+            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+                <span aria-hidden="true" class="visually-hidden">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form (ngSubmit)="addProduct()" #productForm="ngForm">
+                <div class="form-group">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="name" [(ngModel)]="product.name" name="name"
+                            placeholder="name" required #name="ngModel">
+                        <!-- <span [hidden]="name.valid || name.pristine"
+                            class="alert alert-danger">
+                         Name is required
+                        </span>     -->
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="price" [(ngModel)]="product.price" name="price" required
+                            placeholder="price">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="quantity" [(ngModel)]="product.quantity" required
+                            name="quantity" placeholder="quantity">
+                    </div>
+                    <!-- <button type="button" (click)="addProduct()" class="btn btn-success">Add</button> -->
+                    <button type="submit"  class="btn btn-success" [disabled]="!productForm.form.valid">Add</button>
+                </div>
+            </form>
+            {{ product | json }}
+        </div>
+    </ng-template>
 </div>

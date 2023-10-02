@@ -57,7 +57,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { DzPipe } from './app-pipe/dz.pipe';
 import { dzSubString } from './app-pipe/dz-sub-string';
 import { NameFilterPipe } from './app-pipe/name-filter.pipe';
-
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -121,7 +121,8 @@ import { NameFilterPipe } from './app-pipe/name-filter.pipe';
     HttpClientModule,
     TabsModule.forRoot(),
     CarouselModule.forRoot(),
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [DesignUtilityService],
   bootstrap: [AppComponent]

@@ -49,36 +49,36 @@ export class DesignUtilityService {
       price:17000.00,
       quantity:35
     },
-    {
-      id :6 , 
-      name:"laptop apple",
-      price:25000.00,
-      quantity:50
-    },
-    {
-      id :7, 
-      name:"smart watch Noise",
-      price:25000.00,
-      quantity:50
-    },
-    {
-      id :8 , 
-      name:"smart tv LG",
-      price:45000.00,
-      quantity:100
-    },
-    {
-      id :9, 
-      name:"sun glass Rays",
-      price:25000.00,
-      quantity:1000
-    },
-    {
-      id :10 , 
-      name:"washing machine IBF",
-      price:17000.00,
-      quantity:35
-    }
+    // {
+    //   id :6 , 
+    //   name:"laptop apple",
+    //   price:25000.00,
+    //   quantity:50
+    // },
+    // {
+    //   id :7, 
+    //   name:"smart watch Noise",
+    //   price:25000.00,
+    //   quantity:50
+    // },
+    // {
+    //   id :8 , 
+    //   name:"smart tv LG",
+    //   price:45000.00,
+    //   quantity:100
+    // },
+    // {
+    //   id :9, 
+    //   name:"sun glass Rays",
+    //   price:25000.00,
+    //   quantity:1000
+    // },
+    // {
+    //   id :10 , 
+    //   name:"washing machine IBF",
+    //   price:17000.00,
+    //   quantity:35
+    // }
   ]
 
 }
