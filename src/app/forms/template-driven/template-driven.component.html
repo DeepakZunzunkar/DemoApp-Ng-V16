@@ -1,0 +1,38 @@
+<div class="card m-2">
+    <div class="card-body">
+        <ul>
+            <li>
+                step 1: copy or create form structure 
+            </li>
+            <li>
+                step 2: on form tag create (ngSubmit)="onSubmit(myForm)" #myForm="ngForm" and in .ts file method argument type of submit method is ngForm. 
+            </li>
+            <li>
+                step 3: till now we will not get the value because each input is not bind with ngForm , 
+                to bind we need to add name attribute and ngModel Directive to each input element.
+                ngModel tells that input element control is our from control
+            </li>
+            <li>
+                Step 4: alternative way to access form is using @ViewChild()
+            </li>
+            <li>step 5: by using ngModelGroup we can mentain structure of the object.
+                here we can metain better structure . ngModelGroup="userDetails" this will create a new node in structure 
+                we can validate particular form group and also can access javascript code of particular group for that we need to add template refferene as fallow 
+                #userDeatil="ngModelGroup".
+            </li>            
+        </ul>
+    </div>
+</div>
+<div class="mgrid">
+    <ul class="list">
+        <li>
+            <a class="nav-link" routerLink="/tempdform">form1</a>
+        </li>
+        <li>
+            <a class="nav-link" routerLink="/tempdform1">form2  (@Viewchild)</a>
+        </li>
+        <li>
+            <a class="nav-link" routerLink="/tempdform2">grouping form-control</a>
+        </li>
+    </ul>
+</div>

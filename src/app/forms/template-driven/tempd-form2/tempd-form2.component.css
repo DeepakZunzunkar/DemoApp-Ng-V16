@@ -1,0 +1,25 @@
+.form-group{
+    margin: 1.5rem;
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched{
+    border: 1px solid red;
+    box-shadow: 0 0 13px rgba(230, 71, 50, 0.993);
+}
+
+input.ng-valid.ng-touched,
+select.ng-valid.ng-touched{
+    border: 1px solid green;
+    /* box-shadow: 0 0 13px rgba(230, 71, 50, 0.993); */
+}
+
+.userDtls{
+    border: 1px solid #465daf;
+    border-radius: 5px;
+}
+
+.userDtls span{
+    border-top: 0px;
+    padding: 2px;
+}

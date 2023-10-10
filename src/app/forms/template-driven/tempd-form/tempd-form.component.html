@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card bg-light">
+        <div class="cart-body">
+
+            <div class="row justify-content-center m-5">
+                <div class="col-md-6 text-left bg-white rounded shadow p-5">
+
+                    <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm"> 
+                        <div class="form-group">
+                          <label for="username">Username</label>
+                          <input type="text" class="form-control" id="username"  name="username" placeholder="Enter Username" ngModel required #username="ngModel">
+                        </div>
+                        <div class="form-group">
+                          <label for="email">Email</label>
+                          <input type="email" class="form-control" id="email" name="email"  placeholder="Enter email" ngModel required email #email="ngModel">
+                          <small class="text-danger" *ngIf="!email.valid && email.touched"> Plaese enter valid eamil</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="course">Select Course</label>
+                          <select class="form-control" id="course" name="course" [ngModel]="defaultCourse" required>
+                                <option value="Angular">Angular</option>
+                                <option value="Javascript">Javascript</option>
+                                <option value="Html">Html</option>
+                                <option value="Css">Css</option>
+                          </select>
+                        </div>
+                        <!-- <button type="submit" [disabled]="!myForm.valid" class="btn btn-success">Submit</button> -->
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <hr>
+                        {{ myForm.value | json }}
+                      </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

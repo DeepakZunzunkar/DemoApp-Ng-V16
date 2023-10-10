@@ -1,0 +1,46 @@
+<div class="container">
+
+    <div class="row  justify-content-center mb-5">
+        <div class="col-xl-5">
+            <div class="card box-red" appFormbxd>
+                <div class="card-body">
+
+                    <h2 class="font-weight-bold">Template Driven Forms</h2>
+                    <p class="text-muted">
+
+                    </p>
+                    <hr>
+                    <ul>
+                        <li *ngFor="let tnote of templateDrivenNotes">
+                            <span class="me-2"><i class="fa-solid fa-check"></i></span>
+                            {{ tnote }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <app-template-driven></app-template-driven>
+        </div>
+
+        <span class="col-xl-1 vl"></span>
+        <div class="col-xl-5">
+            <div class="card box-green">
+                <div class="card-body" appFormbxdgreen>
+                    <h2 class="font-weight-bold">Reactive Forms</h2>
+                    <p class="text-muted">
+
+                    </p>
+                    <hr>
+                    <ul>
+                        <li *ngFor="let rnote of reactiveNotes">
+                            <span class="me-2"><i class="fa-solid fa-check"></i></span>
+                            {{ rnote }}
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

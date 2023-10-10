@@ -58,6 +58,14 @@ import { DzPipe } from './app-pipe/dz.pipe';
 import { dzSubString } from './app-pipe/dz-sub-string';
 import { NameFilterPipe } from './app-pipe/name-filter.pipe';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { FormsComponent } from './forms/forms.component';
+import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
+import { ReactiveComponent } from './forms/reactive/reactive.component';
+import { FormbxdDirective } from './appdirective/formbxd.directive';
+import { FormbxdgreenDirective } from './appdirective/formbxdgreen.directive';
+import { TempdFormComponent } from './forms/template-driven/tempd-form/tempd-form.component';
+import { TempdForm1Component } from './forms/template-driven/tempd-form1/tempd-form1.component';
+import { TempdForm2Component } from './forms/template-driven/tempd-form2/tempd-form2.component';
 
 @NgModule({
   declarations: [
@@ -110,7 +118,15 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     PipesComponent,
     DzPipe,
     dzSubString,
-    NameFilterPipe
+    NameFilterPipe,
+    FormsComponent,
+    TemplateDrivenComponent,
+    ReactiveComponent,
+    FormbxdDirective,
+    FormbxdgreenDirective,
+    TempdFormComponent,
+    TempdForm1Component,
+    TempdForm2Component
     
     
   ],

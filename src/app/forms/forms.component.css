@@ -1,0 +1,43 @@
+.vl {
+
+    border-left: 6px solid #990099;
+    border-radius: 5px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.col-xl-1 {
+    width: 0.333333%
+}
+
+ul {
+    list-style: none;
+    width: min(60rem, 90%);
+    margin-inline: auto;
+}
+
+.box-red{
+    
+    background: #fffdf3;
+    border: 1px solid #f75e0b;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.rboxshadow{
+    box-shadow: 0 0 60px #ff6600 inset;
+}
+
+.box-green{
+    
+    background: #ccffcc;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+
+.gboxshadow{
+    box-shadow: 0 0 60px #66ff00ea inset;
+}

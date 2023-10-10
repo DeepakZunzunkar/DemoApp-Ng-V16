@@ -25,6 +25,10 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { ViewchildComponent } from './viewchild/viewchild.component';
 import { HostListnerBindingComponent } from './host-listner-binding/host-listner-binding.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { FormsComponent } from './forms/forms.component';
+import { TempdFormComponent } from './forms/template-driven/tempd-form/tempd-form.component';
+import { TempdForm1Component } from './forms/template-driven/tempd-form1/tempd-form1.component';
+import { TempdForm2Component } from './forms/template-driven/tempd-form2/tempd-form2.component';
 
 
 const routes: Routes = [
@@ -88,6 +92,10 @@ const routes: Routes = [
   { path: "viewchild",component: ViewchildComponent },
   { path: "hostlb",component: HostListnerBindingComponent },
   { path: "pipes",component: PipesComponent },
+  { path: "forms",component: FormsComponent },
+  { path: "tempdform",component: TempdFormComponent },
+  { path: "tempdform1",component: TempdForm1Component },
+  { path: "tempdform2",component: TempdForm2Component },
 
   { path: "**", component: PageNotFoundComponent }
 ];
