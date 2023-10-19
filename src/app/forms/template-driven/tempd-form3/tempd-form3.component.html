@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="card bg-light">
+        <div class="cart-body">
+            <div class="row justify-content-center m-5">
+                <div class="col-md-6 text-left bg-white rounded shadow p-5">
+
+                    <!-- <h5 class="card-title"></h5> -->
+                    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+                        <div ngModelGroup="userDetails" #userDetail="ngModelGroup"
+                            [ngClass]="userDetail.valid ? 'userDtlsGreen':  userDetail.touched ? 'userDtlsRed':'userDtls'">
+                            <span class="userDtls"> User Details </span>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="username" name="username"
+                                    placeholder="Enter Username" ngModel required #username="ngModel">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Enter email" ngModel required email #email="ngModel">
+                                <small class="text-danger" *ngIf="!email.valid && email.touched"> Plaese enter valid
+                                    eamil</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender </label>
+                                <div class="custom-control custome-radio" style="margin-left: 8px;" *ngFor="let gender of genders">
+                                    <input class="custom-control-input" type="radio" name="gender"
+                                        id="{{ gender.id }}" value="{{ gender.value }}" [ngModel]="defaultGender" required>
+                                    <label class="custom-control-label" style="margin-left: 8px;" for="{{ gender.id }}">
+                                        {{ gender.value }} 
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <small *ngIf="!userDetail.valid && userDetail.touched" class="text-danger">please enter valid
+                            user details</small>
+                        <div class="form-group">
+                            <select class="form-control" id="course" name="course" [ngModel]="defaultCourse" required>
+                                <option value="Angular">Angular</option>
+                                <option value="Javascript">Javascript</option>
+                                <option value="Html">Html</option>
+                                <option value="Css">Css</option>
+                            </select>
+                        </div>
+
+
+                        <!-- <button type="submit" [disabled]="!myForm.valid" class="btn btn-success">Submit</button> -->
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <hr>
+                        {{ myForm.value | json }}
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -66,6 +66,7 @@ import { FormbxdgreenDirective } from './appdirective/formbxdgreen.directive';
 import { TempdFormComponent } from './forms/template-driven/tempd-form/tempd-form.component';
 import { TempdForm1Component } from './forms/template-driven/tempd-form1/tempd-form1.component';
 import { TempdForm2Component } from './forms/template-driven/tempd-form2/tempd-form2.component';
+import { TempdForm3Component } from './forms/template-driven/tempd-form3/tempd-form3.component';
 
 @NgModule({
   declarations: [
@@ -126,7 +127,8 @@ import { TempdForm2Component } from './forms/template-driven/tempd-form2/tempd-f
     FormbxdgreenDirective,
     TempdFormComponent,
     TempdForm1Component,
-    TempdForm2Component
+    TempdForm2Component,
+    TempdForm3Component
     
     
   ],

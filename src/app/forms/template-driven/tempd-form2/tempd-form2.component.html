@@ -6,7 +6,7 @@
                     
                     <h5 class="card-title">Form-Control Grouping</h5>
                     <form (ngSubmit)="onSubmit()" #myForm="ngForm"> 
-                        <div ngModelGroup="userDetails"  #userDetail="ngModelGroup" class="userDtls">
+                        <div ngModelGroup="userDetails"  #userDetail="ngModelGroup" [ngClass]="userDetail.valid ? 'userDtlsGreen':  userDetail.touched ? 'userDtlsRed':'userDtls'">
                             <span class="userDtls"> User Details </span>
                             <div class="form-group">
                               <input type="text" class="form-control" id="username"  name="username" placeholder="Enter Username" ngModel required #username="ngModel">
