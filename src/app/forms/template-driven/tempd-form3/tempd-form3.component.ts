@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-tempd-form3',
@@ -10,6 +11,8 @@ export class TempdForm3Component {
 
   @ViewChild('myForm') myForm:NgForm;
 
+  @ViewChild("template") template: TemplateRef<any>;
+
   defaultCourse:any="Javascript";
 
   defaultGender:any="Male"
@@ -19,8 +22,32 @@ export class TempdForm3Component {
     { id:2, value:'Female'}
   ]
   
+  formdata = {
+    username:"",
+    email:"",
+    gender:"",
+    course:"",
+
+  }
+
+  modalRef?: BsModalRef;
+  constructor(private modalService: BsModalService){
+
+  }
+
   onSubmit(){
     console.log(this.myForm);
+    
+    if(this.myForm.valid){
+
+      this.formdata.username = this.myForm.value.userDetails.username;
+      this.formdata.email = this.myForm.value.userDetails.email;
+      this.formdata.gender = this.myForm.value.userDetails.gender;
+      this.formdata.course = this.myForm.value.course;
+
+      this.modalRef = this.modalService.show(this.template);
+    }
+
   }
   
   setUserName(){
