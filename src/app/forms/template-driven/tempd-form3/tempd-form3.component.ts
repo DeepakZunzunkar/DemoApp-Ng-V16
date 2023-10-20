@@ -23,4 +23,27 @@ export class TempdForm3Component {
     console.log(this.myForm);
   }
   
+  setUserName(){
+
+    //setValue : all the values in the form ,has to set otherwise it won't work
+    // this.myForm.setValue({
+    //    userDetails : {
+    //        username : "Dz", 
+    //        email: "dz@gmail.com", 
+    //        gender: "Female"
+    //    },
+    //    course: "Css" 
+    
+    //   });
+
+    // patchValue : we can set particular one field of the form . 
+    this.myForm.form.patchValue({
+
+      userDetails : {
+          username: "amit"
+      }
+
+    });
+    
+  }
 }
