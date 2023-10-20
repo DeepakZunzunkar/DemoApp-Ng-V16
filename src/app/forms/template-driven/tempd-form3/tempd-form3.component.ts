@@ -1,6 +1,7 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, TemplateRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-tempd-form3',
@@ -31,7 +32,7 @@ export class TempdForm3Component {
   }
 
   modalRef?: BsModalRef;
-  constructor(private modalService: BsModalService){
+  constructor(private modalService: BsModalService,private changeDetection: ChangeDetectorRef){
 
   }
 
@@ -46,6 +47,37 @@ export class TempdForm3Component {
       this.formdata.course = this.myForm.value.course;
 
       this.modalRef = this.modalService.show(this.template);
+      
+      // const _combine = combineLatest(
+      //   this.modalService.onShow,
+      //   this.modalService.onShown,
+      //   this.modalService.onHide,
+      //   this.modalService.onHidden
+      // ).subscribe(() => this.changeDetection.markForCheck());
+
+
+      this.modalService.onHide.subscribe((reason: string | any) => {
+        if (typeof reason !== 'string') {
+          reason = `onHide(), modalId is : ${reason.id}`;
+        }
+        const _reason = reason ? `, dismissed by ${reason}` : '';
+        console.log(`onHide event has been fired${_reason}`);
+
+        // reset form state and it's value 
+        this.myForm.resetForm();
+
+      });
+
+
+      // this.modalService.onHidden.subscribe((reason: string | any) => {
+      //   if (typeof reason !== 'string') {
+      //     reason = `onHide(), modalId is : ${reason.id}`;
+      //   }
+      //   const _reason = reason ? `, dismissed by ${reason}` : '';
+      //   console.log(`onHidden event has been fired${_reason}`);
+        
+      // })
+
     }
 
   }
