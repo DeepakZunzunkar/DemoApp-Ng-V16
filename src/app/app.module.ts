@@ -12,7 +12,7 @@ import { DatabindComponent } from './databind/databind.component';
 import { ClassStyleBindingComponent } from './databind/class-style-binding/class-style-binding.component';
 import { EventBindingComponent } from './databind/event-binding/event-binding.component';
 import { TwoDataBindingComponent } from './databind/two-data-binding/two-data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AlertModule } from 'ngx-bootstrap/alert';
@@ -67,6 +67,7 @@ import { TempdFormComponent } from './forms/template-driven/tempd-form/tempd-for
 import { TempdForm1Component } from './forms/template-driven/tempd-form1/tempd-form1.component';
 import { TempdForm2Component } from './forms/template-driven/tempd-form2/tempd-form2.component';
 import { TempdForm3Component } from './forms/template-driven/tempd-form3/tempd-form3.component';
+import { ReactForm1Component } from './forms/reactive/react-form1/react-form1.component';
 
 @NgModule({
   declarations: [
@@ -128,7 +129,8 @@ import { TempdForm3Component } from './forms/template-driven/tempd-form3/tempd-f
     TempdFormComponent,
     TempdForm1Component,
     TempdForm2Component,
-    TempdForm3Component
+    TempdForm3Component,
+    ReactForm1Component
     
     
   ],
@@ -136,6 +138,7 @@ import { TempdForm3Component } from './forms/template-driven/tempd-form3/tempd-f
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     TabsModule.forRoot(),
     CarouselModule.forRoot(),

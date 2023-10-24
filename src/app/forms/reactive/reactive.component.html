@@ -1,1 +1,40 @@
-<p>reactive works!</p>
+<div class="card m-2">
+    <div class="card-body">
+        <ul>
+            <li>
+                step 1: copy or create form structure 
+            </li>
+            <li>
+                step 2: for reactive Form , we don't need FormsModule to be imported in AppModule
+                we can remove that , instead of that we have to import ReactiveFormsModule in AppModule
+            </li>
+            <li>
+                step 3: setup Forms and Controls : 
+                <p>1. first we need to declaire property in .ts file of type FormGroup <strong>ex: myReacticeForm: FormGroup</strong></p>
+                <p>2. after that in ngOninit lifecycle hook we have to setup or initilise the form controls as fallow  </p>
+                <p><span>this.myReacticeForm = new FormGroup(&#123;
+                        'username': new FormControl(null),
+                        'email': new FormControl(null),
+                        'gender': new FormControl("Male"),
+
+                    &#125;)</span></p>
+
+                <p>3. then connect the Html form with property in ts file here we have to use the directive 
+                    [FormGroup] on form tag on html and bind that with the form property on .ts file .
+                    <strong>[FormGroup]="myReacticeForm"</strong>
+                </p>
+                <p>4. till now control is not bind so to bind that we have to use FormControlName directive in each input element and bind this directive 
+                    with control we declaire in  myReacticeForm in .ts file </p>
+                <p>5. for submitting form we will use same ngSubmit directive and here we don't need to add local template refference varibale </p>        
+            </li>            
+        </ul>
+    </div>
+</div>
+<div class="mgrid">
+    <ul class="list">
+        <li>
+            <a class="nav-link" routerLink="/reactform1">form1</a>
+        </li>
+       
+    </ul>
+</div>
