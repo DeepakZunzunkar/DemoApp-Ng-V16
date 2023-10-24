@@ -68,6 +68,8 @@ import { TempdForm1Component } from './forms/template-driven/tempd-form1/tempd-f
 import { TempdForm2Component } from './forms/template-driven/tempd-form2/tempd-form2.component';
 import { TempdForm3Component } from './forms/template-driven/tempd-form3/tempd-form3.component';
 import { ReactForm1Component } from './forms/reactive/react-form1/react-form1.component';
+import { ReactForm2Component } from './forms/reactive/react-form2/react-form2.component';
+import { ReactForm3Component } from './forms/reactive/react-form3/react-form3.component';
 
 @NgModule({
   declarations: [
@@ -130,7 +132,9 @@ import { ReactForm1Component } from './forms/reactive/react-form1/react-form1.co
     TempdForm1Component,
     TempdForm2Component,
     TempdForm3Component,
-    ReactForm1Component
+    ReactForm1Component,
+    ReactForm2Component,
+    ReactForm3Component
     
     
   ],

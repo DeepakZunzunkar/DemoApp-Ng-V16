@@ -27,14 +27,28 @@
                     with control we declaire in  myReacticeForm in .ts file </p>
                 <p>5. for submitting form we will use same ngSubmit directive and here we don't need to add local template refference varibale </p>        
             </li>            
+            <li>
+                step 4: for validation we don't have to put required on html element , here we can set validators
+                on form in .ts file , property of type FormGroup where form FormControl are define there we can set validator as per our requirement.
+            </li>
+            <li>
+                step 5: by using formGroupName we can mentain structure of the object.
+                 here we can metain better structure . formGroupName="userDetails" this will create a new node in structure same we have to fallow this structure 
+                 in .ts file .
+            </li>
         </ul>
     </div>
 </div>
 <div class="mgrid">
     <ul class="list">
         <li>
-            <a class="nav-link" routerLink="/reactform1">form1</a>
+            <a class="nav-link" routerLink="/reactform1">form 1</a>
         </li>
-       
+        <li>
+            <a class="nav-link" routerLink="/reactform2">form 2</a>
+        </li>
+        <li>
+            <a class="nav-link" routerLink="/reactform3">form 3</a>
+        </li>
     </ul>
 </div>

@@ -31,6 +31,8 @@ import { TempdForm1Component } from './forms/template-driven/tempd-form1/tempd-f
 import { TempdForm2Component } from './forms/template-driven/tempd-form2/tempd-form2.component';
 import { TempdForm3Component } from './forms/template-driven/tempd-form3/tempd-form3.component';
 import { ReactForm1Component } from './forms/reactive/react-form1/react-form1.component';
+import { ReactForm2Component } from './forms/reactive/react-form2/react-form2.component';
+import { ReactForm3Component } from './forms/reactive/react-form3/react-form3.component';
 
 
 const routes: Routes = [
@@ -100,6 +102,8 @@ const routes: Routes = [
   { path: "tempdform2",component: TempdForm2Component },
   { path: "tempdform3",component: TempdForm3Component },
   { path: "reactform1",component: ReactForm1Component },
+  { path: "reactform2",component: ReactForm2Component },
+  { path: "reactform3",component: ReactForm3Component },
 
   { path: "**", component: PageNotFoundComponent }
 ];
