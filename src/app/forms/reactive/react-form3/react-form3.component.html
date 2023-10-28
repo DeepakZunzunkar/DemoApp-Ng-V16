@@ -10,8 +10,8 @@
                     <hr>
                     <form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
 
-                        <div formGroupName="userDetails" 
-                        [ngClass]="myReactiveForm.get('userDetails')?.valid ? 'userDtlsGreen':  myReactiveForm.get('userDetails')?.touched ? 'userDtlsRed':'userDtls'">
+                        <div formGroupName="userDetails"
+                            [ngClass]="myReactiveForm.get('userDetails')?.valid ? 'userDtlsGreen':  myReactiveForm.get('userDetails')?.touched ? 'userDtlsRed':'userDtls'">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="username" name="username"
                                     placeholder="Enter Username" formControlName="username">
@@ -37,9 +37,12 @@
                                 </div>
                             </div>
                         </div>
-                        <small *ngIf="!myReactiveForm.get('userDetails')?.valid && myReactiveForm.get('userDetails')?.touched" class="text-danger">please enter valid
+                        <small
+                            *ngIf="!myReactiveForm.get('userDetails')?.valid && myReactiveForm.get('userDetails')?.touched"
+                            class="text-danger">please enter valid
                             user details</small>
                         <div class="form-group">
+                            <label for="course">Select Course</label>
                             <select class="form-control" id="course" name="course" formControlName="course">
                                 <option value="Angular">Angular</option>
                                 <option value="Javascript">Javascript</option>
@@ -47,10 +50,27 @@
                                 <option value="Css">Css</option>
                             </select>
                         </div>
+                        <div class="form-group" formArrayName="skills">
+                            <label for="skills">skills</label><br>
+                            <!-- <ng-container *ngFor="let skill of myReactiveForm.get('skills').controls"> it is not working error shows-->
 
-
-                        <button type="submit" [disabled]="!myReactiveForm.touched"
-                            class="btn btn-success">Submit</button>
+                            <ng-container *ngFor="let skill of getSkillControls(); index as i ">
+                                <input type="text" class="form-control mt-2" formControlName="{{i}}" id="skils"
+                                    name="skills" style="width: 60%;display: inline-block !important;"
+                                    placeholder="add skills">
+                                <button *ngIf="getSkillControls().length > 1" class="btn btn-light" type="button"
+                                    (click)="removeSkills(i)"><i class="fa-sharp fa-solid fa-delete-left"></i></button>
+                            </ng-container>
+                            <div>
+                                <button class="btn btn-light btn-sm mt-3 btn-add" (click)="addSkills()" type="button"> 
+                                    <i class="fa-duotone fa-plus"></i> Add Skills
+                                </button>
+                            </div>
+                        </div>
+                        <div class="position-relative btn-row">
+                            <button type="submit" [disabled]="!myReactiveForm.touched"
+                                class="btn btn-success">Submit</button>
+                        </div>
                         <hr>
                         {{ myReactiveForm.value | json }}
                     </form>
@@ -74,5 +94,12 @@
         <p>Email : <strong> {{ formdata.email }} </strong></p>
         <p>Gender : <strong> {{ formdata.gender }} </strong></p>
         <p>Course : <strong> {{ formdata.course }} </strong></p>
+        <p style="background: chocolate;">Skills : <strong>
+                <span class="badge badge-primary" *ngFor="let skill of formdata.skills;index as i">
+                    {{ '#'+ (i + 1) +']' }} {{ skill  }} {{ ((formdata.skills.length)==i) ? ',':''}}
+                </span>
+            </strong></p>
+            <hr>
+            {{ formdata | json }}
     </div>
 </ng-template>

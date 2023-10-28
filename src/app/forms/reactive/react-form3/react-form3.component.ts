@@ -1,5 +1,5 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
@@ -10,6 +10,8 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class ReactForm3Component {
 
   myReactiveForm:FormGroup;
+
+  isSubmitted:boolean=false;
 
   @ViewChild("template") template: TemplateRef<any>;
 
@@ -24,7 +26,7 @@ export class ReactForm3Component {
     email:"",
     gender:"",
     course:"",
-
+    skills:[]
   }
   
   modalRef?: BsModalRef;
@@ -33,7 +35,7 @@ export class ReactForm3Component {
 
   }
 
-
+  
   ngOnInit(): void {
     
       this.myReactiveForm=new FormGroup({
@@ -45,7 +47,24 @@ export class ReactForm3Component {
           'gender':new FormControl("Male"),
         }),
         'course':new FormControl("Html"),
+        'skills':new FormArray([
+          new FormControl(null,Validators.required)
+        ])
       })
+
+      
+  }
+
+  addSkills(){
+      (<FormArray>this.myReactiveForm.get("skills")).push(new FormControl(null,Validators.required))
+  }  
+  
+  removeSkills(index:any){
+    (<FormArray>this.myReactiveForm.get("skills")).removeAt(index);
+  }
+
+  getSkillControls() {
+    return (this.myReactiveForm.get('skills') as FormArray).controls;
   }
 
   onSubmit(){
@@ -56,6 +75,10 @@ export class ReactForm3Component {
       this.formdata.email = this.myReactiveForm.value.userDetails.email;
       this.formdata.gender = this.myReactiveForm.value.userDetails.gender;
       this.formdata.course = this.myReactiveForm.value.course;
+      this.formdata.skills = this.myReactiveForm.value.skills;
+
+      // this.formdata.skills.push(this.myReactiveForm.value.skills)
+
 
       this.modalRef = this.modalService.show(this.template);
 
@@ -70,6 +93,70 @@ export class ReactForm3Component {
         // this.myReactiveForm.resetForm();
 
       });
+    }else{
+
+        // this.myReactiveForm.controls.forEach((element:any) => {
+          
+        // });
+
+        this.myReactiveForm.markAllAsTouched();
+
+        Object.keys(this.myReactiveForm.controls).forEach(key => {
+            // this.myReactiveForm.controls[key].markAsDirty();
+            // this.myReactiveForm.controls[key].markAsTouched();
+            let abstractControl = this.myReactiveForm.controls[key];
+
+            if (abstractControl instanceof FormGroup) {
+
+                Object.keys(abstractControl.controls).forEach(key2 =>{
+
+                  (<FormGroup>abstractControl).controls[key2].markAsTouched();
+
+                });
+
+            }if(abstractControl instanceof FormArray){
+
+              // abstractControl.markAllAsTouched();
+
+              Object.keys(abstractControl.controls).forEach(key3 =>{
+
+                // (<FormArray>abstractControl).controls
+                // (<FormControl>abstractControl.controls[key3]).markAsTouched();
+
+              });
+
+              abstractControl.controls.forEach(ss =>{
+
+                console.log(ss);
+
+                Object.keys(ss).forEach(dd =>{
+                  console.log(dd);
+                });
+                
+                // this.myReactiveForm.controls[ss].markAsTouched(); 
+
+              });
+
+              // const formArray = abstractControl.controls
+
+            }else{
+              this.myReactiveForm.controls[key].markAsTouched();
+            }
+
+        });
     }
   }
+
+  //   public markControlsDirty(group: FormGroup | FormArray): void {
+  //     Object.keys(group.controls).forEach((key: string) => {
+  //         const abstractControl = group.controls[key];
+
+  //         if (abstractControl instanceof FormGroup || abstractControl instanceof FormArray) {
+  //             this.markControlsDirty(abstractControl);
+  //         } else {
+  //             abstractControl.markAsDirty();
+  //         }
+  //     });
+  // }
+
 }

@@ -34,3 +34,26 @@ select.ng-valid.ng-touched{
     border-top: 0px;
     padding: 2px;
 }
+
+.btn-add{
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.4);
+    font-style: normal;
+}
+
+.btn-add i{
+    font-style: normal;
+    font-size: 33px;
+    line-height: 12px;
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    margin-right: 3px;
+}
+
+.btn-add:hover{
+    border: 1px solid #007bff;
+    background: #fff;
+    color: #007bff;
+}
