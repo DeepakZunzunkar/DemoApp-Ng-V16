@@ -1,0 +1,120 @@
+<div class="container">
+    <div class="card bg-light">
+        <div class="cart-body">
+            <div class="row justify-content-center m-5">
+                <div class="col-md-1"><button type="button" routerLink="/forms"
+                        class="btn btn-secondary btn-sm">Back</button></div>
+                <div class="col-md-6 text-left bg-white rounded shadow p-5">
+
+                    <h5 class="card-title">Custome Validators</h5>
+                    <hr>
+                    <form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+
+                        <div formGroupName="userDetails"
+                            [ngClass]="myReactiveForm.get('userDetails')?.valid ? 'userDtlsGreen':  myReactiveForm.get('userDetails')?.touched ? 'userDtlsRed':'userDtls'">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="username" name="username"
+                                    placeholder="Enter Username" formControlName="username">
+                                <small class="text-danger"
+                                    *ngIf="!myReactiveForm.get('userDetails.username')?.valid && myReactiveForm.get('userDetails.username')?.touched ">
+                                    <!-- at this time i have change configuration for TypeScrip Compilor so now we no need to use '?' in below code  -->
+                                   <span *ngIf="myReactiveForm.get('userDetails.username').errors['required']"> 
+                                         please enter valid username
+                                    </span>
+                                    <span *ngIf="myReactiveForm.get('userDetails.username')?.errors['nameIsNotAllowed']"> 
+                                       {{ myReactiveForm.get('userDetails.username').value }} usrname is not allowed  
+                                    </span>
+                                </small>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Enter email" formControlName="email" autocomplete="off">
+                                <!-- we can access any form control as  "myReactiveForm.get('formControlName')" in template  -->
+                                <small class="text-danger"
+                                    *ngIf="!myReactiveForm.get('userDetails.email')?.valid && myReactiveForm.get('userDetails.email')?.touched ">
+                                    <span *ngIf="myReactiveForm.get('userDetails.email').errors['required']"> 
+                                        please enter valid eamil
+                                   </span>
+                                   <span *ngIf="myReactiveForm.get('userDetails.email')?.errors['emailIsNotAllowed']"> 
+                                      {{ myReactiveForm.get('userDetails.email').value }} email is not allowed  
+                                   </span>
+                                </small>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender </label>
+                                <div class="custom-control custome-radio" style="margin-left: 8px;"
+                                    *ngFor="let gender of genders">
+                                    <input class="custom-control-input" type="radio" name="gender" id="{{ gender.id }}"
+                                        value="{{ gender.value }}" formControlName="gender">
+                                    <label class="custom-control-label" style="margin-left: 8px;" for="{{ gender.id }}">
+                                        {{ gender.value }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <small
+                            *ngIf="!myReactiveForm.get('userDetails')?.valid && myReactiveForm.get('userDetails')?.touched"
+                            class="text-danger">please enter valid
+                            user details</small>
+                        <div class="form-group">
+                            <label for="course">Select Course</label>
+                            <select class="form-control" id="course" name="course" formControlName="course">
+                                <option value="Angular">Angular</option>
+                                <option value="Javascript">Javascript</option>
+                                <option value="Html">Html</option>
+                                <option value="Css">Css</option>
+                            </select>
+                        </div>
+                        <div class="form-group" formArrayName="skills">
+                            <label for="skills">skills</label><br>
+                            <!-- <ng-container *ngFor="let skill of myReactiveForm.get('skills').controls"> it is not working error shows-->
+
+                            <ng-container *ngFor="let skill of getSkillControls(); index as i ">
+                                <input type="text" class="form-control mt-2" formControlName="{{i}}" id="skils"
+                                    name="skills" style="width: 60%;display: inline-block !important;"
+                                    placeholder="add skills">
+                                <button *ngIf="getSkillControls().length > 1" class="btn btn-light" type="button"
+                                    (click)="removeSkills(i)"><i class="fa-sharp fa-solid fa-delete-left"></i></button>
+                            </ng-container>
+                            <div>
+                                <button class="btn btn-light btn-sm mt-3 btn-add" (click)="addSkills()" type="button">
+                                    <i class="fa-duotone fa-plus"></i> Add Skills
+                                </button>
+                            </div>
+                        </div>
+                        <div class="position-relative btn-row">
+                            <button type="submit" [disabled]="!myReactiveForm.touched"
+                                class="btn btn-success">Submit</button>
+                        </div>
+                        <hr>
+                        {{ myReactiveForm.value | json }}
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title">Form Data</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Username : <strong> {{ formdata.username }} </strong></p>
+        <p>Email : <strong> {{ formdata.email }} </strong></p>
+        <p>Gender : <strong> {{ formdata.gender }} </strong></p>
+        <p>Course : <strong> {{ formdata.course }} </strong></p>
+        <p style="background: chocolate;">Skills : <strong>
+                <span class="badge badge-primary" *ngFor="let skill of formdata.skills;index as i">
+                    {{ '#'+ (i + 1) +']' }} {{ skill }} {{ ((formdata.skills.length)==i) ? ',':''}}
+                </span>
+            </strong></p>
+        <hr>
+        {{ formdata | json }}
+    </div>
+</ng-template>
