@@ -1,6 +1,7 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
-import { AbstractControl, FormArray, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, AsyncValidator, AsyncValidatorFn, FormArray, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-react-form4',
@@ -45,6 +46,7 @@ export class ReactForm4Component {
         //  so we have to bind this  while calling  validators 
         'username': new FormControl(null, [Validators.required, this.customValidatorForUserName.bind(this)]),
         'email': new FormControl(null, [Validators.required, Validators.email,this.customValidatorForEmail.bind(this)]),
+        // 'email': new FormControl(null,[Validators.required,Validators.email,this.customValidatorForEmail.bind(this)],this.customAsyncValidatorForEmail12),
         'gender': new FormControl("Male"),
       }),
       'course': new FormControl("Html"),
@@ -131,4 +133,49 @@ export class ReactForm4Component {
     return null;
   }
 
+  // to create asysnk validator , we have to set return type as Observable or Promise
+  customAsynkValidatorForEmail(control:FormControl):  Promise<any> | null {
+
+      const myResponse = new Promise((resolve,reject)=>{
+
+          setTimeout( ()=>{
+            if(control.value === 'akashay@gmail.com'){
+                resolve({"emailAlreadyUsed" : true });
+            }else{
+              resolve({"emailAlreadyUsed" : false });
+            } 
+          },30000);
+
+      });
+
+    return myResponse;
+  }
+
+  customAsyncValidatorForEmail(control: FormControl): Promise<any> | Observable<any> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === 'akashay@gmail.com') {
+          resolve({ emailAlreadyUsed: true });
+        } else {
+          resolve(null);
+        }
+      }, 3000); // Adjust the timeout value as needed
+    });
+  }
+
+  customAsyncValidatorForEmail12: AsyncValidatorFn = (control: AbstractControl): Observable<ValidationErrors | null> => {
+    return new Observable<ValidationErrors | null>((observer) => {
+      setTimeout(() => {
+        if (control.value === 'akashay@gmail.com') {
+          observer.next({ emailAlreadyUsed: true });
+        } else {
+          observer.next(null);
+        }
+        observer.complete();
+      }, 3000); // Adjust the timeout value as needed
+    });
+  };
 }
+
+
+// Note : not able to resolve issue regarding AsyncValidators

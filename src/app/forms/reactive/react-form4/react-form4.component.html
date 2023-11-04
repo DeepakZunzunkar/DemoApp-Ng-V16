@@ -6,7 +6,7 @@
                         class="btn btn-secondary btn-sm">Back</button></div>
                 <div class="col-md-6 text-left bg-white rounded shadow p-5">
 
-                    <h5 class="card-title">Custome Validators</h5>
+                    <h5 class="card-title">Custome Validators & Asynk Validators</h5>
                     <hr>
                     <form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
 
@@ -38,6 +38,9 @@
                                    <span *ngIf="myReactiveForm.get('userDetails.email')?.errors['emailIsNotAllowed']"> 
                                       {{ myReactiveForm.get('userDetails.email').value }} email is not allowed  
                                    </span>
+                                   <span *ngIf="myReactiveForm.get('userDetails.email')?.errors['emailAlreadyUsed']"> 
+                                    {{ myReactiveForm.get('userDetails.email').value }} email is not allowed  
+                                 </span>
                                 </small>
                             </div>
                             <div class="form-group">
