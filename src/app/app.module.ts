@@ -71,6 +71,7 @@ import { ReactForm1Component } from './forms/reactive/react-form1/react-form1.co
 import { ReactForm2Component } from './forms/reactive/react-form2/react-form2.component';
 import { ReactForm3Component } from './forms/reactive/react-form3/react-form3.component';
 import { ReactForm4Component } from './forms/reactive/react-form4/react-form4.component';
+import { ReactForm5Component } from './forms/reactive/react-form5/react-form5.component';
 
 
 @NgModule({
@@ -138,6 +139,7 @@ import { ReactForm4Component } from './forms/reactive/react-form4/react-form4.co
     ReactForm2Component,
     ReactForm3Component,
     ReactForm4Component,
+    ReactForm5Component,
     
     
     

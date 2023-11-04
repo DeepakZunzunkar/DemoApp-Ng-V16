@@ -34,6 +34,7 @@ import { ReactForm1Component } from './forms/reactive/react-form1/react-form1.co
 import { ReactForm2Component } from './forms/reactive/react-form2/react-form2.component';
 import { ReactForm3Component } from './forms/reactive/react-form3/react-form3.component';
 import { ReactForm4Component } from './forms/reactive/react-form4/react-form4.component';
+import { ReactForm5Component } from './forms/reactive/react-form5/react-form5.component';
 
 
 const routes: Routes = [
@@ -106,6 +107,7 @@ const routes: Routes = [
   { path: "reactform2",component: ReactForm2Component },
   { path: "reactform3",component: ReactForm3Component },
   { path: "reactform4",component: ReactForm4Component },
+  { path: "reactform5",component: ReactForm5Component },
 
   { path: "**", component: PageNotFoundComponent }
 ];
